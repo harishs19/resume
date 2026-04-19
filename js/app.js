@@ -2,126 +2,49 @@
 /* How to use? : Check the GitHub README
 /* ----------------------------------------------- */
 
-/* To load a config file (particles.json) you need to host this demo (MAMP/WAMP/local)... */
-/*
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particles.js loaded - callback');
-});
-*/
-
-/* Otherwise just put the config content (json): */
-
-particlesJS('particles-js',
-  
-  {
+/* Galaxy Starfield — purple/cyan theme */
+particlesJS('particles-js', {
   "particles": {
-    "number": {
-      "value": 20,
-      "density": {
-        "enable": false,
-        "value_area": 5000
-      }
-    },
-    "color": {
-      "value": "#FFAC00"
-    },
+    "number": { "value": 160, "density": { "enable": true, "value_area": 900 } },
+    "color": { "value": ["#ffffff", "#a855f7", "#38bdf8", "#c084fc", "#7dd3fc"] },
     "shape": {
       "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#FFAC00"
-      },
-      "polygon": {
-        "nb_sides": 3
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
+      "stroke": { "width": 0, "color": "#000000" }
     },
     "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
+      "value": 0.8,
+      "random": true,
+      "anim": { "enable": true, "speed": 0.8, "opacity_min": 0.1, "sync": false }
     },
     "size": {
-      "value": 3,
+      "value": 2.5,
       "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
+      "anim": { "enable": true, "speed": 2, "size_min": 0.3, "sync": false }
     },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#FFAC00",
-      "opacity": 0.4,
-      "width": 1
-    },
+    "line_linked": { "enable": false },
     "move": {
       "enable": true,
-      "speed": 1,
+      "speed": 0.6,
       "direction": "none",
       "random": true,
       "straight": false,
       "out_mode": "out",
       "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 600
-      }
+      "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }
     }
   },
   "interactivity": {
     "detect_on": "canvas",
     "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": false,
-        "mode": "push"
-      },
+      "onhover": { "enable": true, "mode": "repulse" },
+      "onclick":  { "enable": true,  "mode": "bubble" },
       "resize": true
     },
     "modes": {
-      "grab": {
-        "distance": 100,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
+      "repulse": { "distance": 120, "duration": 0.5 },
+      "bubble":  { "distance": 200, "size": 8, "duration": 1.5, "opacity": 1, "speed": 2 },
+      "push":    { "particles_nb": 6 }
     }
   },
   "retina_detect": true
-}
-
-);
+});
