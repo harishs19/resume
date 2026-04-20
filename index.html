@@ -153,6 +153,11 @@
     .sk-pct{font-size:13px;font-weight:700;color:var(--accent)}
     .sk-track{width:100%;height:6px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden}
     .sk-fill{height:100%;border-radius:3px;background:var(--grad);width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+    .sk-card{position:relative}
+    .sk-del-btn{display:none;position:absolute;top:8px;right:9px;background:rgba(239,68,68,.82);color:#fff;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:11px;align-items:center;justify-content:center;line-height:1;z-index:5;padding:0;font-weight:700}
+    .edit-mode .sk-del-btn{display:flex}
+    #add-skill-btn{display:none;margin:18px auto 0}
+    .edit-mode #add-skill-btn{display:flex}
     .tags-area{margin-top:46px}
     .tags-area h3{font-size:15px;font-weight:700;color:var(--text);margin-bottom:14px}
     .tags-wrap{display:flex;flex-wrap:wrap;gap:10px}
@@ -264,13 +269,13 @@
     /* ==========  CV TEMPLATE PICKER  ========== */
     .tpl-overlay{position:fixed;inset:0;background:rgba(0,0,8,.85);backdrop-filter:blur(12px);z-index:99995;display:none;align-items:center;justify-content:center;padding:20px}
     .tpl-overlay.open{display:flex}
-    .tpl-modal{background:#0d0d20;border:1px solid rgba(168,85,247,.28);border-radius:22px;padding:36px 32px;max-width:800px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 28px 90px rgba(0,0,0,.8)}
+    .tpl-modal{background:#0d0d20;border:1px solid rgba(168,85,247,.28);border-radius:22px;padding:36px 32px;max-width:960px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 28px 90px rgba(0,0,0,.8)}
     .tpl-modal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
     .tpl-modal-hd h2{font-size:20px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .tpl-modal-x{background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer;line-height:1;padding:4px 8px;border-radius:6px;transition:all .2s}
     .tpl-modal-x:hover{color:#fff;background:rgba(255,255,255,.08)}
     .tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
-    @media(max-width:600px){.tpl-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:700px){.tpl-grid{grid-template-columns:1fr 1fr}}
     .tpl-card{border:2px solid rgba(255,255,255,.07);border-radius:14px;padding:14px;cursor:pointer;transition:all .28s;background:rgba(255,255,255,.02);position:relative}
     .tpl-card:hover{border-color:rgba(168,85,247,.4);transform:translateY(-4px);background:rgba(168,85,247,.04)}
     .tpl-card.sel{border-color:var(--accent);background:rgba(168,85,247,.09);box-shadow:0 0 0 1px rgba(168,85,247,.25)}
@@ -317,6 +322,32 @@
     .p3-sep{height:2px;background:#7c3aed;width:100%;margin:3px 0;border-radius:1px}
     .p3-sec{height:5px;width:30%;background:#4b4b4b;border-radius:2px;border-left:3px solid #7c3aed;padding-left:5px}
     .p3-l{height:4px;border-radius:2px;background:#ebebeb;margin-bottom:2px}
+    /* T4: Executive Teal */
+    .p4{background:#fff;width:100%;height:100%;display:flex;flex-direction:column}
+    .p4-hdr{height:28%;background:#0f766e;padding:8px 10px;display:flex;flex-direction:column;gap:4px}
+    .p4-n{height:9px;width:52%;background:rgba(255,255,255,.9);border-radius:2px}
+    .p4-r{height:5px;width:35%;background:#99f6e4;border-radius:2px}
+    .p4-body{flex:1;padding:7px;display:flex;flex-direction:column;gap:5px}
+    .p4-acc{height:4px;width:28%;background:#0f766e;border-radius:2px}
+    .p4-l{height:4px;border-radius:2px;background:#e5e7eb}
+    .p4-tags{display:flex;gap:3px;flex-wrap:wrap}
+    .p4-tag{height:6px;width:18%;background:#ccfbf1;border-radius:2px}
+    /* T5: Elegant Warm */
+    .p5{background:#fdf8f2;width:100%;height:100%;display:flex;flex-direction:column}
+    .p5-hdr{height:30%;background:#7c2d12;padding:8px 10px;display:flex;flex-direction:column;gap:4px}
+    .p5-n{height:9px;width:50%;background:rgba(255,255,255,.9);border-radius:2px}
+    .p5-r{height:5px;width:33%;background:#fed7aa;border-radius:2px}
+    .p5-body{flex:1;display:grid;grid-template-columns:1fr 1.8fr}
+    .p5-side{background:#fff7ed;padding:6px;display:flex;flex-direction:column;gap:5px;border-right:1px solid #f0e0ce}
+    .p5-sb{height:4px;border-radius:2px;background:#fdba74}
+    .p5-main{padding:7px;display:flex;flex-direction:column;gap:4px}
+    .p5-acc{height:5px;width:32%;background:#7c2d12;border-radius:2px;margin-bottom:2px}
+    .p5-l{height:4px;border-radius:2px;background:#e7d9c8}
+    /* Timeline group labels */
+    .tl-group{position:relative}
+    .tl-group-lbl{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:18px;margin-top:10px}
+    .tl-group-lbl::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(168,85,247,.4),transparent);margin-left:10px;min-width:40px}
+    .tl-group + .tl-group{margin-top:38px}
   </style>
 </head>
 <body>
@@ -407,6 +438,40 @@
           <div class="tpl-check"><i class="fa fa-check"></i></div>
           <div class="tpl-name">Modern Minimal</div>
           <div class="tpl-desc">Single column &middot; Purple accents &middot; Clean type</div>
+        </div>
+        <!-- T4: Executive Teal -->
+        <div class="tpl-card" data-tpl="cv-template-4.html">
+          <div class="tpl-preview">
+            <div class="p4">
+              <div class="p4-hdr"><div class="p4-n"></div><div class="p4-r"></div></div>
+              <div class="p4-body">
+                <div class="p4-acc"></div>
+                <div class="p4-l" style="width:92%"></div><div class="p4-l" style="width:78%"></div>
+                <div class="p4-acc" style="margin-top:5px"></div>
+                <div class="p4-tags"><div class="p4-tag"></div><div class="p4-tag"></div><div class="p4-tag"></div><div class="p4-tag"></div></div>
+                <div class="p4-acc" style="margin-top:5px"></div>
+                <div class="p4-l" style="width:88%"></div><div class="p4-l" style="width:70%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-check"><i class="fa fa-check"></i></div>
+          <div class="tpl-name">Executive Teal</div>
+          <div class="tpl-desc">Teal header &middot; Single column &middot; Skill tags</div>
+        </div>
+        <!-- T5: Elegant Warm -->
+        <div class="tpl-card" data-tpl="cv-template-5.html">
+          <div class="tpl-preview">
+            <div class="p5">
+              <div class="p5-hdr"><div class="p5-n"></div><div class="p5-r"></div></div>
+              <div class="p5-body">
+                <div class="p5-side"><div class="p5-sb"></div><div class="p5-sb" style="width:80%"></div><div class="p5-sb"></div><div class="p5-sb" style="width:65%"></div></div>
+                <div class="p5-main"><div class="p5-acc"></div><div class="p5-l" style="width:85%"></div><div class="p5-l" style="width:75%"></div><div class="p5-acc" style="margin-top:6px"></div><div class="p5-l" style="width:90%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-check"><i class="fa fa-check"></i></div>
+          <div class="tpl-name">Elegant Warm</div>
+          <div class="tpl-desc">Terracotta header &middot; Warm tones &middot; Two-column</div>
         </div>
       </div>
       <div class="tpl-ft">
@@ -501,13 +566,14 @@
         <p style="max-width:500px;margin:0 auto">Technologies and tools I work with to build scalable backend systems.</p>
       </div>
       <div class="skills-g" data-aos="fade-up" data-aos-delay="100">
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">🐹 Go (Golang)</div><div class="sk-pct">90%</div></div><div class="sk-track"><div class="sk-fill" data-w="90"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">☕ Java</div><div class="sk-pct">85%</div></div><div class="sk-track"><div class="sk-fill" data-w="85"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">🔗 REST &amp; gRPC APIs</div><div class="sk-pct">88%</div></div><div class="sk-track"><div class="sk-fill" data-w="88"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">🗄️ PostgreSQL / MySQL</div><div class="sk-pct">85%</div></div><div class="sk-track"><div class="sk-fill" data-w="85"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">📨 Kafka</div><div class="sk-pct">80%</div></div><div class="sk-track"><div class="sk-fill" data-w="80"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">🔐 JWT Security</div><div class="sk-pct">82%</div></div><div class="sk-track"><div class="sk-fill" data-w="82"></div></div></div>
+        <div class="sk-card"><button class="sk-del-btn" title="Remove">&#xd7;</button><div class="sk-top"><div class="sk-name">🐹 Go (Golang)</div><div class="sk-pct">90%</div></div><div class="sk-track"><div class="sk-fill" data-w="90"></div></div></div>
+        <div class="sk-card"><button class="sk-del-btn" title="Remove">&#xd7;</button><div class="sk-top"><div class="sk-name">☕ Java</div><div class="sk-pct">85%</div></div><div class="sk-track"><div class="sk-fill" data-w="85"></div></div></div>
+        <div class="sk-card"><button class="sk-del-btn" title="Remove">&#xd7;</button><div class="sk-top"><div class="sk-name">🔗 REST &amp; gRPC APIs</div><div class="sk-pct">88%</div></div><div class="sk-track"><div class="sk-fill" data-w="88"></div></div></div>
+        <div class="sk-card"><button class="sk-del-btn" title="Remove">&#xd7;</button><div class="sk-top"><div class="sk-name">🗄️ PostgreSQL / MySQL</div><div class="sk-pct">85%</div></div><div class="sk-track"><div class="sk-fill" data-w="85"></div></div></div>
+        <div class="sk-card"><button class="sk-del-btn" title="Remove">&#xd7;</button><div class="sk-top"><div class="sk-name">📨 Kafka</div><div class="sk-pct">80%</div></div><div class="sk-track"><div class="sk-fill" data-w="80"></div></div></div>
+        <div class="sk-card"><button class="sk-del-btn" title="Remove">&#xd7;</button><div class="sk-top"><div class="sk-name">🔐 JWT Security</div><div class="sk-pct">82%</div></div><div class="sk-track"><div class="sk-fill" data-w="82"></div></div></div>
       </div>
+      <button id="add-skill-btn" class="add-exp-btn"><i class="fa fa-plus"></i> Add Skill</button>
       <div class="tags-area" data-aos="fade-up" data-aos-delay="150">
         <h3>Also familiar with</h3>
         <div class="tags-wrap">
@@ -525,40 +591,54 @@
     <div class="wrap">
       <div class="text-c" data-aos="fade-up">
         <div class="sec-label" style="justify-content:center">My Journey</div>
-        <h2 class="sec-title">Education <span class="grad-text">Timeline</span></h2>
+        <h2 class="sec-title">Education &amp; <span class="grad-text">Experience</span></h2>
         <div class="sec-div" style="margin:0 auto 14px"></div>
-        <p style="max-width:480px;margin:0 auto">Academic milestones that shaped my technical foundation.</p>
+        <p style="max-width:480px;margin:0 auto">Academic background and professional milestones.</p>
       </div>
-      <div class="tl" id="experience-tl" data-aos="fade-up" data-aos-delay="100">
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-year">🎓 2015 – 2019</div>
-            <div class="tl-title">Bachelor of Engineering</div>
-            <div class="tl-sub">Visvesvaraya Technological University</div>
-            <div class="tl-desc">Built a strong foundation in engineering, computer science, algorithms, and software development principles.</div>
+
+      <!-- Education group -->
+      <div class="tl-group" data-aos="fade-up" data-aos-delay="80">
+        <div class="tl-group-lbl"><i class="fa fa-graduation-cap"></i> Education</div>
+        <div class="tl" id="education-tl">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">🎓 2015 – 2019</div>
+              <div class="tl-title">Bachelor of Engineering</div>
+              <div class="tl-sub">Visvesvaraya Technological University</div>
+              <div class="tl-desc">Built a strong foundation in engineering, computer science, algorithms, and software development principles.</div>
+            </div>
           </div>
         </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-year">💼 Mar 2023 – Apr 2024</div>
-            <div class="tl-title">Backend Developer</div>
-            <div class="tl-sub">Increasingly Technologies / Dynamic Selling Pvt Ltd</div>
-            <div class="tl-desc">Developed and maintained backend applications using Java and Spring Boot. Built RESTful services, optimized MySQL schemas, and utilized Hibernate/JPA for ORM-based data persistence.</div>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-year">🚀 May 2024 – Present</div>
-            <div class="tl-title">API Developer (Golang)</div>
-            <div class="tl-sub">Aurionpro Solutions Ltd</div>
-            <div class="tl-desc">Developing Golang-based microservices using REST APIs. Implementing Kafka event publishing, MinIO storage integration, JWT authentication, and Temporal workflows. Observability via structured logging and metrics.</div>
-          </div>
-        </div>
+        <button id="add-edu-btn" class="add-exp-btn"><i class="fa fa-plus"></i> Add Education</button>
       </div>
-      <button id="add-exp-btn" class="add-exp-btn"><i class="fa fa-plus"></i> Add Experience / Education</button>
+
+      <!-- Work Experience group -->
+      <div class="tl-group" data-aos="fade-up" data-aos-delay="120">
+        <div class="tl-group-lbl"><i class="fa fa-briefcase"></i> Work Experience</div>
+        <div class="tl" id="experience-tl">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">💼 Mar 2023 – Apr 2024</div>
+              <div class="tl-title">Backend Developer</div>
+              <div class="tl-sub">Increasingly Technologies / Dynamic Selling Pvt Ltd</div>
+              <div class="tl-desc">Developed and maintained backend applications using Java and Spring Boot. Built RESTful services, optimized MySQL schemas, and utilized Hibernate/JPA for ORM-based data persistence.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">🚀 May 2024 – Present</div>
+              <div class="tl-title">API Developer (Golang)</div>
+              <div class="tl-sub">Aurionpro Solutions Ltd</div>
+              <div class="tl-desc">Developing Golang-based microservices using REST APIs. Implementing Kafka event publishing, MinIO storage integration, JWT authentication, and Temporal workflows. Observability via structured logging and metrics.</div>
+            </div>
+          </div>
+        </div>
+        <button id="add-exp-btn" class="add-exp-btn"><i class="fa fa-plus"></i> Add Experience</button>
+      </div>
+
     </div>
   </section>
 
@@ -813,6 +893,12 @@
             pct:  parseInt(c.querySelector('.sk-pct')?.textContent) || 0
           })),
           tags: Array.from(document.querySelectorAll('.tags-area .tag')).map(t => t.textContent.trim()),
+          education: Array.from(document.querySelectorAll('#education-tl .tl-item')).map(item => ({
+            year:        item.querySelector('.tl-year')?.textContent?.trim() || '',
+            title:       item.querySelector('.tl-title')?.textContent?.trim() || '',
+            institution: item.querySelector('.tl-sub')?.textContent?.trim() || '',
+            desc:        item.querySelector('.tl-desc')?.textContent?.trim() || ''
+          })),
           experience: Array.from(document.querySelectorAll('#experience-tl .tl-item')).map(item => ({
             year:    item.querySelector('.tl-year')?.textContent?.trim() || '',
             title:   item.querySelector('.tl-title')?.textContent?.trim() || '',
@@ -846,7 +932,7 @@
         editBanner.classList.remove('show');
         getFields().forEach(el => { el.contentEditable = 'false'; });
         // Also disable contenteditable on dynamically added items
-        document.querySelectorAll('#experience-tl [contenteditable]').forEach(el => { el.contentEditable = 'false'; });
+        document.querySelectorAll('#education-tl [contenteditable], #experience-tl [contenteditable]').forEach(el => { el.contentEditable = 'false'; });
         document.querySelectorAll('.sk-pct').forEach(el => {
           el.removeEventListener('input', onPctInput);
           syncBar(el);
@@ -859,7 +945,30 @@
         showToast('✓ Saved! Open CV to see your updates.');
       }
 
-      // Add More Experience button
+      // Add Education button
+      const addEduBtn = document.getElementById('add-edu-btn');
+      if(addEduBtn){
+        addEduBtn.addEventListener('click', () => {
+          const tl = document.getElementById('education-tl');
+          const item = document.createElement('div');
+          item.className = 'tl-item';
+          item.innerHTML =
+            '<div class="tl-dot"></div>' +
+            '<div class="tl-card">' +
+            '<div class="tl-year" contenteditable="true" spellcheck="false">\uD83C\uDF93 Year Range</div>' +
+            '<div class="tl-title" contenteditable="true" spellcheck="false">Degree / Course</div>' +
+            '<div class="tl-sub" contenteditable="true" spellcheck="false">Institution Name</div>' +
+            '<div class="tl-desc" contenteditable="true" spellcheck="false">Describe your studies...</div>' +
+            '<button class="del-exp-btn"><i class="fa fa-times"></i> Remove</button>' +
+            '</div>';
+          item.querySelector('.del-exp-btn').addEventListener('click', () => item.remove());
+          tl.appendChild(item);
+          item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => item.querySelector('.tl-year').focus(), 300);
+        });
+      }
+
+      // Add Experience button
       const addBtn = document.getElementById('add-exp-btn');
       if(addBtn){
         addBtn.addEventListener('click', () => {
@@ -870,8 +979,8 @@
             '<div class="tl-dot"></div>' +
             '<div class="tl-card">' +
             '<div class="tl-year" contenteditable="true" spellcheck="false">\uD83D\uDCC5 Year Range</div>' +
-            '<div class="tl-title" contenteditable="true" spellcheck="false">Job Title / Degree</div>' +
-            '<div class="tl-sub" contenteditable="true" spellcheck="false">Company / Institution</div>' +
+            '<div class="tl-title" contenteditable="true" spellcheck="false">Job Title</div>' +
+            '<div class="tl-sub" contenteditable="true" spellcheck="false">Company Name</div>' +
             '<div class="tl-desc" contenteditable="true" spellcheck="false">Describe your role and responsibilities here...</div>' +
             '<button class="del-exp-btn"><i class="fa fa-times"></i> Remove</button>' +
             '</div>';
@@ -881,6 +990,32 @@
           setTimeout(() => item.querySelector('.tl-year').focus(), 300);
         });
       }
+
+      // Add Skill button
+      const addSkillBtn = document.getElementById('add-skill-btn');
+      if(addSkillBtn){
+        addSkillBtn.addEventListener('click', () => {
+          const card = document.createElement('div');
+          card.className = 'sk-card';
+          card.innerHTML =
+            '<button class="sk-del-btn" title="Remove">\xd7</button>' +
+            '<div class="sk-top">' +
+            '<div class="sk-name" contenteditable="true" spellcheck="false">Skill Name</div>' +
+            '<div class="sk-pct" contenteditable="true" spellcheck="false">80%</div>' +
+            '</div>' +
+            '<div class="sk-track"><div class="sk-fill" data-w="80" style="width:80%"></div></div>';
+          card.querySelector('.sk-del-btn').addEventListener('click', () => card.remove());
+          card.querySelector('.sk-pct').addEventListener('input', onPctInput);
+          document.querySelector('.skills-g').appendChild(card);
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => card.querySelector('.sk-name').focus(), 200);
+        });
+      }
+
+      // Wire delete buttons on existing skill cards
+      document.querySelectorAll('.sk-card .sk-del-btn').forEach(btn => {
+        btn.addEventListener('click', () => btn.closest('.sk-card').remove());
+      });
 
       editBtn.addEventListener('click', () => editing ? exitEdit() : enterEdit());
     })();

@@ -27,7 +27,7 @@
 
     /* ---- Header ---- */
     .cv-header {
-      background: #4a4a4a;
+      background: #111;
       color: #fff;
       padding: 36px 50px;
     }
@@ -51,8 +51,8 @@
 
     /* ---- Sidebar ---- */
     .cv-sidebar {
-      background: #6b6b6b;
-      color: #f0f0f0;
+      background: #1a1a1a;
+      color: #e8e8e8;
       padding: 32px 24px;
     }
     .sidebar-section { margin-bottom: 28px; }
@@ -60,10 +60,10 @@
       font-size: 10px;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #d8d8d8;
+      color: #aaaaaa;
       margin-bottom: 14px;
       padding-bottom: 6px;
-      border-bottom: 1px solid #888;
+      border-bottom: 1px solid #444;
     }
     .skill-block { width: 100%; margin-bottom: 10px; }
     .skill-block span { font-size: 12.5px; display: block; margin-bottom: 4px; color: #f0f0f0; }
@@ -77,14 +77,14 @@
     .skill-bar-fill {
       height: 100%;
       border-radius: 2px;
-      background: #d0d0d0;
+      background: #cccccc;
     }
     .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
     .stag {
       display: inline-block;
-      background: #7a7a7a;
-      border: 1px solid #999;
-      color: #f0f0f0;
+      background: #2a2a2a;
+      border: 1px solid #555;
+      color: #e0e0e0;
       font-size: 11px;
       padding: 3px 9px;
       border-radius: 3px;
@@ -97,10 +97,10 @@
       font-size: 10px;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #5a5a5a;
+      color: #111;
       margin-bottom: 14px;
       padding-bottom: 6px;
-      border-bottom: 2px solid #e0e0e0;
+      border-bottom: 2px solid #cccccc;
     }
     .about-text { font-size: 12.5px; color: #444; line-height: 1.85; }
 
@@ -122,7 +122,7 @@
     /* ---- Print button ---- */
     .print-btn-wrap { text-align: center; padding: 22px; background: #efefef; }
     .print-btn {
-      background: #4a4a4a;
+      background: #111;
       color: #fff;
       border: none;
       padding: 11px 34px;
@@ -134,14 +134,14 @@
       letter-spacing: .5px;
       transition: background .2s;
     }
-    .print-btn:hover { background: #6b6b6b; }
+    .print-btn:hover { background: #333; }
     .back-btn {
       background: transparent;
-      color: #4a4a4a;
-      border: 1.5px solid #4a4a4a;
+      color: #111;
+      border: 1.5px solid #111;
       margin-right: 12px;
     }
-    .back-btn:hover { background: #4a4a4a; color: #fff; }
+    .back-btn:hover { background: #111; color: #fff; }
 
     /* ---- Print styles ---- */
     @media print {
@@ -209,9 +209,11 @@
 
         <div class="sidebar-section">
           <h3>Education</h3>
-          <div class="edu-item">
-            <h4>B.E.</h4>
-            <div class="sub">Visvesvaraya Technological University<br/>2015 &ndash; 2019</div>
+          <div id="cv1-education">
+            <div class="edu-item">
+              <h4>B.E.</h4>
+              <div class="sub">Visvesvaraya Technological University<br/>2015 &ndash; 2019</div>
+            </div>
           </div>
         </div>
 
@@ -233,33 +235,32 @@
 
         <div class="main-section">
           <h3>Work Experience</h3>
-
-          <div class="exp-item">
-            <h4>API Developer (Golang)</h4>
-            <div class="company">Aurionpro Solutions Ltd &mdash; May 2024 &ndash; Present</div>
-            <ul>
-              <li>Developed Golang-based microservices using REST APIs for scalable backend communication.</li>
-              <li>Designed optimized PostgreSQL schemas and queries.</li>
-              <li>Implemented Kafka-based event publishing for asynchronous and event-driven workflows.</li>
-              <li>Integrated MinIO for storing and managing images and documents.</li>
-              <li>Implemented JWT-based authentication and authorization for secure API access.</li>
-              <li>Worked with Temporal (Go SDK) to build background workflows with reliable state management.</li>
-              <li>Added observability using structured logging, application metrics, and error tracing.</li>
-              <li>Collaborated through GitHub for version control, branching, pull requests, and code reviews.</li>
-              <li>Participated in agile ceremonies and collaborated closely with cross-functional teams.</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <h4>Backend Developer</h4>
-            <div class="company">Increasingly Technologies / Dynamic Selling Pvt Ltd &mdash; Mar 2023 &ndash; Apr 2024</div>
-            <ul>
-              <li>Developed and maintained backend applications using Java and Spring Boot.</li>
-              <li>Built and consumed RESTful web services enabling smooth microservice communication.</li>
-              <li>Designed and optimized MySQL database schemas and queries for improved system performance.</li>
-              <li>Utilized Hibernate/JPA for efficient ORM-based data persistence.</li>
-              <li>Collaborated with frontend and product teams to deliver business-critical features.</li>
-            </ul>
+          <div id="cv1-experience">
+            <div class="exp-item">
+              <h4>API Developer (Golang)</h4>
+              <div class="company">Aurionpro Solutions Ltd &mdash; May 2024 &ndash; Present</div>
+              <ul>
+                <li>Developed Golang-based microservices using REST APIs for scalable backend communication.</li>
+                <li>Designed optimized PostgreSQL schemas and queries.</li>
+                <li>Implemented Kafka-based event publishing for asynchronous and event-driven workflows.</li>
+                <li>Integrated MinIO for storing and managing images and documents.</li>
+                <li>Implemented JWT-based authentication and authorization for secure API access.</li>
+                <li>Worked with Temporal (Go SDK) to build background workflows with reliable state management.</li>
+                <li>Added observability using structured logging, application metrics, and error tracing.</li>
+                <li>Collaborated through GitHub for version control, branching, pull requests, and code reviews.</li>
+              </ul>
+            </div>
+            <div class="exp-item">
+              <h4>Backend Developer</h4>
+              <div class="company">Increasingly Technologies / Dynamic Selling Pvt Ltd &mdash; Mar 2023 &ndash; Apr 2024</div>
+              <ul>
+                <li>Developed and maintained backend applications using Java and Spring Boot.</li>
+                <li>Built and consumed RESTful web services enabling smooth microservice communication.</li>
+                <li>Designed and optimized MySQL database schemas and queries for improved system performance.</li>
+                <li>Utilized Hibernate/JPA for efficient ORM-based data persistence.</li>
+                <li>Collaborated with frontend and product teams to deliver business-critical features.</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -336,23 +337,27 @@
       }
     }
 
-    // Experience — rebuild "Work Experience" main-section
+    // Education — update sidebar education section
+    if(d.education && d.education.length){
+      var eduEl = document.getElementById('cv1-education');
+      if(eduEl){
+        eduEl.innerHTML = '';
+        d.education.forEach(function(edu){
+          eduEl.innerHTML += '<div class="edu-item"><h4>' + esc(edu.title) + '</h4><div class="sub">' + esc(edu.institution) + '<br/>' + esc(edu.year) + '</div></div>';
+        });
+      }
+    }
+
+    // Experience — rebuild "Work Experience" section
     if(d.experience && d.experience.length){
-      var expSec = null;
-      document.querySelectorAll('.main-section').forEach(function(sec){
-        var h = sec.querySelector('h3');
-        if(h && h.textContent.toLowerCase().indexOf('experience') !== -1) expSec = sec;
-      });
-      if(expSec){
-        expSec.querySelectorAll('.exp-item').forEach(function(el){ el.remove(); });
+      var expEl = document.getElementById('cv1-experience');
+      if(expEl){
+        expEl.innerHTML = '';
         d.experience.forEach(function(exp){
-          var div = document.createElement('div');
-          div.className = 'exp-item';
-          div.innerHTML =
-            '<h4>' + esc(exp.title) + '</h4>' +
+          expEl.innerHTML +=
+            '<div class="exp-item"><h4>' + esc(exp.title) + '</h4>' +
             '<div class="company">' + esc(exp.company) + ' &mdash; ' + esc(exp.year) + '</div>' +
-            '<p style="font-size:12px;color:#444;line-height:1.75;margin-top:4px">' + esc(exp.desc) + '</p>';
-          expSec.appendChild(div);
+            '<p style="font-size:12px;color:#444;line-height:1.75;margin-top:4px">' + esc(exp.desc) + '</p></div>';
         });
       }
     }
