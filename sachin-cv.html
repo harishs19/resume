@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sachin S - CV</title>
+  <title>Manasa A - CV</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -11,8 +11,8 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f0f2f8;
-      color: #1e1e2e;
+      background: #efefef;
+      color: #2d2d2d;
       padding: 30px 15px;
     }
 
@@ -20,140 +20,128 @@
       max-width: 820px;
       margin: 0 auto;
       background: #fff;
-      border-radius: 16px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 10px 50px rgba(0,0,0,.15);
+      box-shadow: 0 8px 40px rgba(0,0,0,.12);
     }
 
     /* ---- Header ---- */
     .cv-header {
-      background: linear-gradient(135deg, #a855f7 0%, #38bdf8 100%);
+      background: #4a4a4a;
       color: #fff;
-      padding: 40px 50px;
-      display: flex;
-      align-items: center;
-      gap: 30px;
+      padding: 36px 50px;
     }
-    .cv-photo {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid rgba(255,255,255,.5);
-      flex-shrink: 0;
-    }
-    .cv-title h1 { font-size: 28px; font-weight: 700; }
-    .cv-title p  { font-size: 14px; opacity: .9; margin-top: 5px; }
-    .cv-contacts  { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .cv-title h1 { font-size: 28px; font-weight: 700; letter-spacing: 1px; color: #fff; }
+    .cv-title .role { font-size: 14px; color: #d4d4d4; margin-top: 5px; font-weight: 400; }
+    .cv-contacts { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 12px; }
     .cv-contacts span {
-      font-size: 13px;
-      background: rgba(255,255,255,.2);
+      font-size: 12px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
       padding: 4px 12px;
-      border-radius: 20px;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       gap: 6px;
+      color: #e8e8e8;
     }
 
     /* ---- Body ---- */
-    .cv-body { display: grid; grid-template-columns: 1fr 1.6fr; }
+    .cv-body { display: grid; grid-template-columns: 1fr 1.7fr; }
 
     /* ---- Sidebar ---- */
     .cv-sidebar {
-      background: #0f0f23;
-      color: #e2e8f0;
-      padding: 35px 28px;
+      background: #6b6b6b;
+      color: #f0f0f0;
+      padding: 32px 24px;
     }
-    .sidebar-section { margin-bottom: 30px; }
+    .sidebar-section { margin-bottom: 28px; }
     .sidebar-section h3 {
-      font-size: 11px;
-      letter-spacing: 2px;
+      font-size: 10px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #a855f7;
+      color: #d8d8d8;
       margin-bottom: 14px;
       padding-bottom: 6px;
-      border-bottom: 1px solid rgba(168,85,247,.3);
+      border-bottom: 1px solid #888;
     }
-    .skill-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      font-size: 13px;
-    }
+    .skill-block { width: 100%; margin-bottom: 10px; }
+    .skill-block span { font-size: 12.5px; display: block; margin-bottom: 4px; color: #f0f0f0; }
     .skill-bar {
       width: 100%;
-      height: 5px;
-      background: rgba(255,255,255,.1);
-      border-radius: 3px;
-      margin-top: 4px;
+      height: 4px;
+      background: #888;
+      border-radius: 2px;
       overflow: hidden;
     }
     .skill-bar-fill {
       height: 100%;
-      border-radius: 3px;
-      background: linear-gradient(90deg, #a855f7, #38bdf8);
+      border-radius: 2px;
+      background: #d0d0d0;
     }
-    .skill-block { width: 100%; margin-bottom: 12px; }
-    .skill-block span { font-size: 13px; display: block; margin-bottom: 4px; }
-
-    .interest-tag {
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .stag {
       display: inline-block;
-      background: rgba(168,85,247,.2);
-      color: #c084fc;
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin: 3px 3px 3px 0;
+      background: #7a7a7a;
+      border: 1px solid #999;
+      color: #f0f0f0;
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 3px;
     }
 
     /* ---- Main ---- */
-    .cv-main { padding: 35px 38px; }
-    .main-section { margin-bottom: 30px; }
+    .cv-main { padding: 32px 36px; background: #fff; }
+    .main-section { margin-bottom: 26px; }
     .main-section h3 {
-      font-size: 11px;
-      letter-spacing: 2px;
+      font-size: 10px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #a855f7;
-      margin-bottom: 16px;
+      color: #5a5a5a;
+      margin-bottom: 14px;
       padding-bottom: 6px;
-      border-bottom: 2px solid #f0e6ff;
+      border-bottom: 2px solid #e0e0e0;
     }
-    .edu-item, .proj-item { margin-bottom: 18px; }
-    .edu-item h4, .proj-item h4 { font-size: 14px; font-weight: 600; color: #1e1e2e; }
-    .edu-item .sub, .proj-item .sub {
-      font-size: 12px;
-      color: #a855f7;
-      font-weight: 600;
-      margin: 2px 0;
-    }
-    .edu-item p, .proj-item p { font-size: 12.5px; color: #555; line-height: 1.6; margin-top: 4px; }
+    .about-text { font-size: 12.5px; color: #444; line-height: 1.85; }
 
-    .about-text { font-size: 13px; color: #444; line-height: 1.8; }
+    .exp-item { margin-bottom: 20px; }
+    .exp-item h4 { font-size: 13.5px; font-weight: 600; color: #2d2d2d; }
+    .exp-item .company { font-size: 12px; color: #5a5a5a; font-weight: 600; margin: 2px 0 6px; }
+    .exp-item ul { padding-left: 16px; }
+    .exp-item ul li { font-size: 12px; color: #555; line-height: 1.75; margin-bottom: 3px; }
 
-    /* ---- Print button (hidden on print) ---- */
-    .print-btn-wrap { text-align: center; padding: 25px; background: #f0f2f8; }
+    .edu-item { margin-bottom: 14px; }
+    .edu-item h4 { font-size: 13px; font-weight: 600; color: #2d2d2d; }
+    .edu-item .sub { font-size: 11.5px; color: #6b6b6b; margin-top: 2px; }
+
+    .proj-item { margin-bottom: 16px; }
+    .proj-item h4 { font-size: 13px; font-weight: 600; color: #2d2d2d; }
+    .proj-item .stack { font-size: 11px; color: #7a7a7a; font-style: italic; margin: 2px 0 4px; }
+    .proj-item p { font-size: 12px; color: #555; line-height: 1.7; }
+
+    /* ---- Print button ---- */
+    .print-btn-wrap { text-align: center; padding: 22px; background: #efefef; }
     .print-btn {
-      background: linear-gradient(135deg, #a855f7, #38bdf8);
+      background: #4a4a4a;
       color: #fff;
       border: none;
-      padding: 12px 36px;
-      border-radius: 30px;
-      font-size: 15px;
+      padding: 11px 34px;
+      border-radius: 4px;
+      font-size: 14px;
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       cursor: pointer;
       letter-spacing: .5px;
-      box-shadow: 0 6px 20px rgba(168,85,247,.35);
-      transition: transform .2s;
+      transition: background .2s;
     }
-    .print-btn:hover { transform: scale(1.04); }
+    .print-btn:hover { background: #6b6b6b; }
     .back-btn {
       background: transparent;
-      color: #a855f7;
-      border: 1.5px solid #a855f7;
+      color: #4a4a4a;
+      border: 1.5px solid #4a4a4a;
       margin-right: 12px;
     }
+    .back-btn:hover { background: #4a4a4a; color: #fff; }
 
     /* ---- Print styles ---- */
     @media print {
@@ -169,14 +157,13 @@
 
     <!-- HEADER -->
     <div class="cv-header">
-      <img src="images/profile2.jpeg" alt="Sachin S" class="cv-photo" onerror="this.style.display='none'"/>
       <div class="cv-title">
-        <h1>Sachin S</h1>
-        <p>MCA Student &nbsp;|&nbsp; Web Developer &nbsp;|&nbsp; AI &amp; ML Enthusiast</p>
+        <h1>Manasa A</h1>
+        <div class="role">API Developer (Golang)</div>
         <div class="cv-contacts">
-          <span>&#128222; +91 9113031388</span>
-          <span>&#9993; sachin9113031388@gmail.com</span>
-          <span>&#127760; India</span>
+          <span>&#128222; +91 9741847894 / 9380153607</span>
+          <span>&#9993; sri15manasa@gmail.com</span>
+          <span>&#128205; Bangalore</span>
         </div>
       </div>
     </div>
@@ -189,56 +176,42 @@
 
         <div class="sidebar-section">
           <h3>Technical Skills</h3>
+          <div class="skill-block"><span>Go (Golang)</span><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+          <div class="skill-block"><span>Java</span><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+          <div class="skill-block"><span>REST &amp; gRPC APIs</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+          <div class="skill-block"><span>PostgreSQL / MySQL</span><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+          <div class="skill-block"><span>Kafka</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+          <div class="skill-block"><span>JWT Security</span><div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+          <div class="skill-block"><span>Spring Boot</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+        </div>
 
-          <div class="skill-block">
-            <span>HTML &amp; CSS</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
-          </div>
-          <div class="skill-block">
-            <span>JavaScript</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
-          </div>
-          <div class="skill-block">
-            <span>Python</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
-          </div>
-          <div class="skill-block">
-            <span>Web Development</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-          </div>
-          <div class="skill-block">
-            <span>Machine Learning</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
-          </div>
-          <div class="skill-block">
-            <span>Artificial Intelligence</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:72%"></div></div>
+        <div class="sidebar-section">
+          <h3>Frameworks &amp; Tools</h3>
+          <div class="tag-list">
+            <span class="stag">Gin</span>
+            <span class="stag">Spring Boot</span>
+            <span class="stag">MinIO</span>
+            <span class="stag">Temporal</span>
+            <span class="stag">Git / GitHub</span>
+            <span class="stag">Jenkins</span>
+            <span class="stag">Docker*</span>
+            <span class="stag">Kubernetes*</span>
           </div>
         </div>
 
         <div class="sidebar-section">
-          <h3>Interests</h3>
-          <span class="interest-tag">Web Development</span>
-          <span class="interest-tag">AI &amp; ML</span>
-          <span class="interest-tag">Python</span>
-          <span class="interest-tag">Data Science</span>
-          <span class="interest-tag">Competitive Exams</span>
-          <span class="interest-tag">Problem Solving</span>
+          <h3>Messaging</h3>
+          <div class="tag-list">
+            <span class="stag">Apache Kafka</span>
+            <span class="stag">Event-Driven</span>
+          </div>
         </div>
 
         <div class="sidebar-section">
-          <h3>Languages</h3>
-          <div class="skill-block">
-            <span>English</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-          </div>
-          <div class="skill-block">
-            <span>Kannada</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
-          </div>
-          <div class="skill-block">
-            <span>Hindi</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
+          <h3>Education</h3>
+          <div class="edu-item">
+            <h4>B.E.</h4>
+            <div class="sub">Visvesvaraya Technological University<br/>2015 &ndash; 2019</div>
           </div>
         </div>
 
@@ -248,34 +221,45 @@
       <div class="cv-main">
 
         <div class="main-section">
-          <h3>About Me</h3>
+          <h3>Summary</h3>
           <p class="about-text">
-            I am an MCA student with a strong interest in Web Development, Artificial Intelligence,
-            and Machine Learning. I enjoy building real-world projects and continuously improving
-            my technical skills. I am passionate about applying technology to solve practical problems
-            and keep up-to-date with the latest developments in AI and software engineering.
+            Backend Developer with 3+ years of experience in designing and building scalable backend
+            systems using Golang and Java. Experienced in developing microservices, REST and gRPC APIs,
+            and implementing event-driven architectures using Kafka. Strong expertise in PostgreSQL query
+            optimization and secure API development with JWT authentication. Skilled in building reliable
+            backend services with a focus on performance, scalability, and maintainability in agile environments.
           </p>
         </div>
 
         <div class="main-section">
-          <h3>Education</h3>
+          <h3>Work Experience</h3>
 
-          <div class="edu-item">
-            <h4>Master of Computer Applications (MCA)</h4>
-            <div class="sub">Postgraduation &mdash; Pursuing</div>
-            <p>Focused on advanced computing, software engineering, AI and machine learning concepts.</p>
+          <div class="exp-item">
+            <h4>API Developer (Golang)</h4>
+            <div class="company">Aurionpro Solutions Ltd &mdash; May 2024 &ndash; Present</div>
+            <ul>
+              <li>Developed Golang-based microservices using REST APIs for scalable backend communication.</li>
+              <li>Designed optimized PostgreSQL schemas and queries.</li>
+              <li>Implemented Kafka-based event publishing for asynchronous and event-driven workflows.</li>
+              <li>Integrated MinIO for storing and managing images and documents.</li>
+              <li>Implemented JWT-based authentication and authorization for secure API access.</li>
+              <li>Worked with Temporal (Go SDK) to build background workflows with reliable state management.</li>
+              <li>Added observability using structured logging, application metrics, and error tracing.</li>
+              <li>Collaborated through GitHub for version control, branching, pull requests, and code reviews.</li>
+              <li>Participated in agile ceremonies and collaborated closely with cross-functional teams.</li>
+            </ul>
           </div>
 
-          <div class="edu-item">
-            <h4>Bachelor's Degree</h4>
-            <div class="sub">Mathematics &amp; Computer Science</div>
-            <p>Built a strong foundation in mathematics, algorithms, and programming fundamentals.</p>
-          </div>
-
-          <div class="edu-item">
-            <h4>PUC &mdash; PCMB</h4>
-            <div class="sub">Physics &bull; Chemistry &bull; Mathematics &bull; Biology</div>
-            <p>Completed pre-university education with a science stream.</p>
+          <div class="exp-item">
+            <h4>Backend Developer</h4>
+            <div class="company">Increasingly Technologies / Dynamic Selling Pvt Ltd &mdash; Mar 2023 &ndash; Apr 2024</div>
+            <ul>
+              <li>Developed and maintained backend applications using Java and Spring Boot.</li>
+              <li>Built and consumed RESTful web services enabling smooth microservice communication.</li>
+              <li>Designed and optimized MySQL database schemas and queries for improved system performance.</li>
+              <li>Utilized Hibernate/JPA for efficient ORM-based data persistence.</li>
+              <li>Collaborated with frontend and product teams to deliver business-critical features.</li>
+            </ul>
           </div>
         </div>
 
@@ -283,30 +267,15 @@
           <h3>Projects</h3>
 
           <div class="proj-item">
-            <h4>Fake Profile Detection using Machine Learning</h4>
-            <div class="sub">Python &bull; scikit-learn &bull; Machine Learning</div>
-            <p>
-              Built a classification model to detect fake/bot social media profiles by analysing
-              profile attributes and behavioural patterns using supervised learning algorithms.
-            </p>
+            <h4>Transfer Management System</h4>
+            <div class="stack">Stack: Go, PostgreSQL, Gin, REST</div>
+            <p>Backend platform for government internal transfer processing with scalable REST APIs and optimized PostgreSQL schemas for high-volume transaction handling.</p>
           </div>
 
           <div class="proj-item">
-            <h4>Object Detection using Machine Learning</h4>
-            <div class="sub">Python &bull; Computer Vision &bull; Machine Learning</div>
-            <p>
-              Developed an object detection system leveraging ML and computer vision to identify
-              and classify objects in real-time from images and video streams.
-            </p>
-          </div>
-
-          <div class="proj-item">
-            <h4>Personal Portfolio Website</h4>
-            <div class="sub">HTML &bull; CSS &bull; JavaScript</div>
-            <p>
-              Designed and developed a fully responsive personal portfolio website showcasing
-              education, skills, projects, and contact information.
-            </p>
+            <h4>CartSynergy &ndash; Product Bundling System</h4>
+            <div class="stack">Stack: Java, Spring Boot, MySQL</div>
+            <p>Backend system for product bundle creation and pricing optimization with MySQL data management and REST API integration.</p>
           </div>
         </div>
 
@@ -319,6 +288,98 @@
     <button class="print-btn back-btn" onclick="window.location.href='index.html'">&#8592; Back to Portfolio</button>
     <button class="print-btn" onclick="window.print()">&#128438; Download / Print CV</button>
   </div>
+
+  <!-- Sync from portfolio edits via localStorage -->
+  <script>
+  (function(){
+    var raw = localStorage.getItem('portfolio_data');
+    if(!raw) return;
+    var d;
+    try{ d = JSON.parse(raw); } catch(e){ return; }
+
+    function esc(s){
+      var el = document.createElement('span');
+      el.textContent = String(s || '');
+      return el.innerHTML;
+    }
+    function get(sel){ return document.querySelector(sel); }
+
+    // Name
+    if(d.name){ var h1 = get('.cv-title h1'); if(h1) h1.textContent = d.name; }
+
+    // Role
+    if(d.role){ var role = get('.cv-title .role'); if(role) role.textContent = d.role; }
+
+    // Contacts (phone, email, location)
+    var spans = document.querySelectorAll('.cv-contacts span');
+    var icons  = ['\uD83D\uDCDE ', '\u2709 ', '\uD83D\uDCCD '];
+    var vals   = [d.phone, d.email, d.location];
+    for(var i = 0; i < spans.length && i < icons.length; i++){
+      if(vals[i]) spans[i].textContent = icons[i] + vals[i];
+    }
+
+    // Summary
+    if(d.summary){ var sumEl = get('.about-text'); if(sumEl) sumEl.textContent = d.summary; }
+
+    // Skills — rebuild first sidebar section's skill-blocks
+    if(d.skills && d.skills.length){
+      var skillSec = get('.cv-sidebar .sidebar-section');
+      if(skillSec){
+        skillSec.querySelectorAll('.skill-block').forEach(function(el){ el.remove(); });
+        d.skills.forEach(function(sk){
+          var div = document.createElement('div');
+          div.className = 'skill-block';
+          div.innerHTML = '<span>' + esc(sk.name) + '</span>' +
+            '<div class="skill-bar"><div class="skill-bar-fill" style="width:' + (sk.pct || 0) + '%"></div></div>';
+          skillSec.appendChild(div);
+        });
+      }
+    }
+
+    // Experience — rebuild "Work Experience" main-section
+    if(d.experience && d.experience.length){
+      var expSec = null;
+      document.querySelectorAll('.main-section').forEach(function(sec){
+        var h = sec.querySelector('h3');
+        if(h && h.textContent.toLowerCase().indexOf('experience') !== -1) expSec = sec;
+      });
+      if(expSec){
+        expSec.querySelectorAll('.exp-item').forEach(function(el){ el.remove(); });
+        d.experience.forEach(function(exp){
+          var div = document.createElement('div');
+          div.className = 'exp-item';
+          div.innerHTML =
+            '<h4>' + esc(exp.title) + '</h4>' +
+            '<div class="company">' + esc(exp.company) + ' &mdash; ' + esc(exp.year) + '</div>' +
+            '<p style="font-size:12px;color:#444;line-height:1.75;margin-top:4px">' + esc(exp.desc) + '</p>';
+          expSec.appendChild(div);
+        });
+      }
+    }
+
+    // Projects — rebuild "Projects" main-section
+    if(d.projects && d.projects.length){
+      var projSec = null;
+      document.querySelectorAll('.main-section').forEach(function(sec){
+        var h = sec.querySelector('h3');
+        if(h && h.textContent.toLowerCase().indexOf('project') !== -1) projSec = sec;
+      });
+      if(projSec){
+        projSec.querySelectorAll('.proj-item').forEach(function(el){ el.remove(); });
+        d.projects.forEach(function(proj){
+          var div = document.createElement('div');
+          div.className = 'proj-item';
+          var stackStr = (proj.tags && proj.tags.length) ? proj.tags.map(esc).join(', ') : '';
+          div.innerHTML =
+            '<h4>' + esc(proj.title) + '</h4>' +
+            (stackStr ? '<div class="stack">Stack: ' + stackStr + '</div>' : '') +
+            '<p>' + esc(proj.desc) + '</p>';
+          projSec.appendChild(div);
+        });
+      }
+    }
+  })();
+  </script>
 
 </body>
 </html>

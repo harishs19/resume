@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manasa A - CV (Modern Minimal)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Lato',sans-serif; background:#f4f4f4; color:#222; padding:30px 15px; }
+
+    .cv-wrap { max-width:780px; margin:0 auto; background:#fff; box-shadow:0 6px 40px rgba(0,0,0,.14); }
+
+    /* ---- Header ---- */
+    .cv-hdr { padding:40px 50px 28px; border-bottom:3px solid #7c3aed; }
+    .cv-hdr h1 { font-size:30px; font-weight:900; color:#111; letter-spacing:-.5px; }
+    .cv-hdr .role { font-size:13px; color:#7c3aed; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-top:5px; }
+    .cv-hdr .contacts { display:flex; flex-wrap:wrap; gap:18px; margin-top:12px; }
+    .cv-hdr .contacts span { font-size:12px; color:#555; display:flex; align-items:center; gap:5px; }
+
+    /* ---- Body ---- */
+    .cv-body { padding:32px 50px; }
+
+    /* ---- Section ---- */
+    .sec { margin-bottom:28px; }
+    .sec h3 { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:#7c3aed; font-weight:900; padding:0 0 0 10px; border-left:3px solid #7c3aed; margin-bottom:14px; line-height:1.6; }
+    .summary-txt { font-size:13px; color:#333; line-height:1.88; }
+
+    /* ---- Skills ---- */
+    .two-col { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; }
+    @media(max-width:580px){ .two-col{ grid-template-columns:1fr; } .skills-grid{ grid-template-columns:1fr !important; } }
+    .skills-grid { display:grid; grid-template-columns:1fr 1fr; gap:9px 24px; }
+    .sk-row { display:flex; align-items:center; gap:10px; }
+    .sk-row .sk-lbl { font-size:12px; color:#333; font-weight:600; width:114px; flex-shrink:0; }
+    .sk-bar { flex:1; height:5px; background:#ede9ff; border-radius:3px; overflow:hidden; }
+    .sk-fill { height:100%; border-radius:3px; background:#7c3aed; }
+
+    /* ---- Tags ---- */
+    .tag-row { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+    .ttag { background:#f5f0ff; color:#7c3aed; border:1px solid #d6bfff; font-size:11.5px; padding:4px 12px; border-radius:20px; font-weight:600; }
+
+    /* ---- Education ---- */
+    .edu-it { padding-left:12px; border-left:2px solid #ede9ff; }
+    .edu-it h4 { font-size:13px; font-weight:700; color:#111; }
+    .edu-it .sub { font-size:11.5px; color:#666; margin-top:3px; line-height:1.55; }
+
+    /* ---- Experience ---- */
+    .exp-it { margin-bottom:20px; padding-left:14px; border-left:2px solid #ede9ff; }
+    .exp-it h4 { font-size:14px; font-weight:700; color:#111; }
+    .exp-it .co { font-size:12px; color:#7c3aed; font-weight:700; margin:2px 0 7px; }
+    .exp-it ul { padding-left:16px; }
+    .exp-it ul li { font-size:12.5px; color:#444; line-height:1.8; margin-bottom:3px; }
+    .exp-it p { font-size:12.5px; color:#444; line-height:1.8; margin-top:4px; }
+
+    /* ---- Projects ---- */
+    .proj-it { margin-bottom:16px; padding:14px 18px; background:#faf8ff; border:1px solid #ede9ff; border-radius:8px; }
+    .proj-it h4 { font-size:13px; font-weight:700; color:#111; }
+    .proj-it .stk { font-size:11px; color:#7c3aed; font-weight:700; margin:3px 0 5px; letter-spacing:.3px; }
+    .proj-it p { font-size:12px; color:#444; line-height:1.72; }
+
+    /* ---- Buttons ---- */
+    .btns { text-align:center; padding:22px; background:#f4f4f4; }
+    .pbtn { background:#7c3aed; color:#fff; border:none; padding:11px 32px; border-radius:4px; font-size:13.5px; font-family:'Lato',sans-serif; font-weight:700; cursor:pointer; transition:background .2s; }
+    .pbtn:hover { background:#6d28d9; }
+    .pbtn.back { background:transparent; color:#7c3aed; border:1.5px solid #7c3aed; margin-right:12px; }
+    .pbtn.back:hover { background:#7c3aed; color:#fff; }
+    @media print { body{background:#fff;padding:0;} .cv-wrap{box-shadow:none;} .btns{display:none;} }
+  </style>
+</head>
+<body>
+
+<div class="cv-wrap">
+
+  <!-- HEADER -->
+  <div class="cv-hdr">
+    <h1 id="cv3-name">Manasa A</h1>
+    <div class="role" id="cv3-role">API Developer (Golang)</div>
+    <div class="contacts" id="cv3-contacts">
+      <span>&#128222; +91 9741847894 / 9380153607</span>
+      <span>&#9993; sri15manasa@gmail.com</span>
+      <span>&#128205; Bangalore</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="cv-body">
+
+    <div class="sec">
+      <h3>Professional Summary</h3>
+      <p class="summary-txt" id="cv3-summary">Backend Developer with 3+ years of experience in designing and building scalable backend systems using Golang and Java. Experienced in developing microservices, REST and gRPC APIs, and implementing event-driven architectures using Kafka. Strong expertise in PostgreSQL query optimization and secure API development with JWT authentication. Skilled in building reliable backend services with a focus on performance, scalability, and maintainability in agile environments.</p>
+    </div>
+
+    <!-- Skills + Education side by side -->
+    <div class="two-col">
+      <div>
+        <div class="sec">
+          <h3>Technical Skills</h3>
+          <div class="skills-grid" id="cv3-skills">
+            <div class="sk-row"><span class="sk-lbl">Go (Golang)</span><div class="sk-bar"><div class="sk-fill" style="width:90%"></div></div></div>
+            <div class="sk-row"><span class="sk-lbl">Java</span><div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div></div>
+            <div class="sk-row"><span class="sk-lbl">REST &amp; gRPC</span><div class="sk-bar"><div class="sk-fill" style="width:88%"></div></div></div>
+            <div class="sk-row"><span class="sk-lbl">PostgreSQL / MySQL</span><div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div></div>
+            <div class="sk-row"><span class="sk-lbl">Kafka</span><div class="sk-bar"><div class="sk-fill" style="width:80%"></div></div></div>
+            <div class="sk-row"><span class="sk-lbl">JWT Security</span><div class="sk-bar"><div class="sk-fill" style="width:82%"></div></div></div>
+          </div>
+          <div class="tag-row" id="cv3-tags">
+            <span class="ttag">Gin</span><span class="ttag">Spring Boot</span><span class="ttag">MinIO</span>
+            <span class="ttag">Temporal</span><span class="ttag">Git / GitHub</span>
+            <span class="ttag">Jenkins</span><span class="ttag">Docker*</span><span class="ttag">Kubernetes*</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sec">
+          <h3>Education</h3>
+          <div class="edu-it">
+            <h4>Bachelor of Engineering</h4>
+            <div class="sub">Visvesvaraya Technological University<br/>2015 &ndash; 2019</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3>Work Experience</h3>
+      <div id="cv3-experience">
+        <div class="exp-it">
+          <h4>API Developer (Golang)</h4>
+          <div class="co">Aurionpro Solutions Ltd &mdash; May 2024 &ndash; Present</div>
+          <ul>
+            <li>Developed Golang-based microservices using REST APIs for scalable backend communication.</li>
+            <li>Designed optimized PostgreSQL schemas and queries.</li>
+            <li>Implemented Kafka-based event publishing for asynchronous and event-driven workflows.</li>
+            <li>Integrated MinIO for storing and managing images and documents.</li>
+            <li>Implemented JWT-based authentication and authorization for secure API access.</li>
+            <li>Worked with Temporal (Go SDK) to build reliable background workflows with state management.</li>
+            <li>Added observability using structured logging, application metrics, and error tracing.</li>
+            <li>Collaborated through GitHub for version control, branching, pull requests, and code reviews.</li>
+            <li>Participated in agile ceremonies and collaborated closely with cross-functional teams.</li>
+          </ul>
+        </div>
+        <div class="exp-it">
+          <h4>Backend Developer</h4>
+          <div class="co">Increasingly Technologies / Dynamic Selling Pvt Ltd &mdash; Mar 2023 &ndash; Apr 2024</div>
+          <ul>
+            <li>Developed and maintained backend applications using Java and Spring Boot.</li>
+            <li>Built and consumed RESTful web services enabling smooth microservice communication.</li>
+            <li>Designed and optimized MySQL database schemas and queries for improved system performance.</li>
+            <li>Utilized Hibernate/JPA for efficient ORM-based data persistence.</li>
+            <li>Collaborated with frontend and product teams to deliver business-critical features.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3>Projects</h3>
+      <div id="cv3-projects">
+        <div class="proj-it">
+          <h4>Transfer Management System</h4>
+          <div class="stk">Stack: Go &middot; PostgreSQL &middot; Gin &middot; REST</div>
+          <p>Backend platform for government internal transfer processing with scalable REST APIs and optimized PostgreSQL schemas for high-volume transaction handling.</p>
+        </div>
+        <div class="proj-it">
+          <h4>CartSynergy &ndash; Product Bundling System</h4>
+          <div class="stk">Stack: Java &middot; Spring Boot &middot; MySQL</div>
+          <p>Backend system for product bundle creation and pricing optimization with MySQL data management and REST API integration.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end cv-body -->
+</div><!-- end cv-wrap -->
+
+<div class="btns">
+  <button class="pbtn back" onclick="window.location.href='index.html'">&#8592; Back to Portfolio</button>
+  <button class="pbtn" onclick="window.print()">&#128438; Download / Print CV</button>
+</div>
+
+<!-- Sync from portfolio edits via localStorage -->
+<script>
+(function(){
+  var raw = localStorage.getItem('portfolio_data');
+  if(!raw) return;
+  var d; try{ d = JSON.parse(raw); } catch(e){ return; }
+  function esc(s){ var el = document.createElement('span'); el.textContent = String(s||''); return el.innerHTML; }
+
+  if(d.name) document.getElementById('cv3-name').textContent = d.name;
+  if(d.role) document.getElementById('cv3-role').textContent = d.role;
+
+  var spans = document.querySelectorAll('.cv-hdr .contacts span');
+  var icons = ['\uD83D\uDCDE ', '\u2709 ', '\uD83D\uDCCD '];
+  var vals  = [d.phone, d.email, d.location];
+  for(var i = 0; i < spans.length && i < icons.length; i++){
+    if(vals[i]) spans[i].textContent = icons[i] + vals[i];
+  }
+
+  if(d.summary) document.getElementById('cv3-summary').textContent = d.summary;
+
+  if(d.skills && d.skills.length){
+    var el = document.getElementById('cv3-skills'); el.innerHTML = '';
+    d.skills.forEach(function(sk){
+      el.innerHTML += '<div class="sk-row"><span class="sk-lbl">' + esc(sk.name) + '</span><div class="sk-bar"><div class="sk-fill" style="width:' + (sk.pct||0) + '%"></div></div></div>';
+    });
+  }
+
+  if(d.tags && d.tags.length){
+    var tel = document.getElementById('cv3-tags'); tel.innerHTML = '';
+    d.tags.forEach(function(t){ tel.innerHTML += '<span class="ttag">' + esc(t) + '</span>'; });
+  }
+
+  if(d.experience && d.experience.length){
+    var eel = document.getElementById('cv3-experience'); eel.innerHTML = '';
+    d.experience.forEach(function(exp){
+      eel.innerHTML += '<div class="exp-it"><h4>' + esc(exp.title) + '</h4><div class="co">' + esc(exp.company) + ' &mdash; ' + esc(exp.year) + '</div><p>' + esc(exp.desc) + '</p></div>';
+    });
+  }
+
+  if(d.projects && d.projects.length){
+    var pel = document.getElementById('cv3-projects'); pel.innerHTML = '';
+    d.projects.forEach(function(proj){
+      var stk = (proj.tags && proj.tags.length) ? proj.tags.map(esc).join(' &middot; ') : '';
+      pel.innerHTML += '<div class="proj-it"><h4>' + esc(proj.title) + '</h4>' + (stk ? '<div class="stk">Stack: ' + stk + '</div>' : '') + '<p>' + esc(proj.desc) + '</p></div>';
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

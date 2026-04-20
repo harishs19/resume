@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <title>Sachin S | Portfolio</title>
-  <meta property="og:title" content="Sachin S | Portfolio"/>
-  <meta property="og:description" content="MCA Student | Web Developer | AI &amp; ML Enthusiast"/>
+  <title>Manasa A | Portfolio</title>
+  <meta property="og:title" content="Manasa A | Portfolio"/>
+  <meta property="og:description" content="API Developer (Golang) | Backend Developer"/>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -237,12 +237,92 @@
     .ld-track{width:190px;height:3px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
     .ld-fill{height:100%;background:var(--grad);border-radius:2px;animation:ldf 1.4s ease forwards}
     @keyframes ldf{from{width:0}to{width:100%}}
+
+    /* ==========  EDIT MODE  ========== */
+    .edit-toggle-btn{display:flex;align-items:center;gap:6px;background:rgba(168,85,247,.12);border:1.5px solid rgba(168,85,247,.35);color:var(--accent);padding:7px 16px;border-radius:20px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;white-space:nowrap}
+    .edit-toggle-btn:hover{background:rgba(168,85,247,.22);transform:translateY(-1px)}
+    .edit-toggle-btn.is-save{background:rgba(74,222,128,.12);border-color:rgba(74,222,128,.45);color:#4ade80}
+    .edit-toggle-btn.is-save:hover{background:rgba(74,222,128,.22)}
+    @media(max-width:768px){.edit-toggle-btn .edit-label{display:none}.edit-toggle-btn{padding:7px 11px}}
+    .edit-banner{position:fixed;top:72px;left:50%;transform:translateX(-50%);background:rgba(20,10,40,.92);backdrop-filter:blur(16px);border:1px solid rgba(168,85,247,.4);color:#fff;padding:9px 22px;border-radius:22px;font-size:12px;font-weight:600;z-index:8500;display:none;align-items:center;gap:10px;box-shadow:0 4px 24px rgba(168,85,247,.35);letter-spacing:.4px;white-space:nowrap}
+    .edit-banner.show{display:flex}
+    .edit-banner .pulse{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pdot 1.4s infinite;flex-shrink:0}
+    body.edit-mode [contenteditable="true"]{outline:1.5px dashed rgba(168,85,247,.5);border-radius:4px;cursor:text;min-width:16px;transition:outline .2s,background .2s}
+    body.edit-mode [contenteditable="true"]:hover{outline-color:var(--accent);background:rgba(168,85,247,.08)}
+    body.edit-mode [contenteditable="true"]:focus{outline:2px solid var(--accent) !important;background:rgba(168,85,247,.12)}
+    /* Add / Remove experience */
+    .add-exp-btn{display:none;align-items:center;justify-content:center;gap:8px;margin-top:18px;width:100%;background:rgba(168,85,247,.07);border:1.5px dashed rgba(168,85,247,.4);color:var(--accent);padding:12px 22px;border-radius:12px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s}
+    .add-exp-btn:hover{background:rgba(168,85,247,.18)}
+    body.edit-mode .add-exp-btn{display:flex}
+    .del-exp-btn{display:none;margin-top:10px;align-items:center;gap:5px;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.3);color:#f87171;padding:5px 12px;border-radius:6px;font-size:11px;font-family:'Poppins',sans-serif;cursor:pointer;transition:all .2s}
+    .del-exp-btn:hover{background:rgba(248,113,113,.2)}
+    body.edit-mode .del-exp-btn{display:inline-flex}
+    /* Save toast */
+    .save-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(10,25,10,.95);backdrop-filter:blur(16px);border:1px solid rgba(74,222,128,.4);color:#4ade80;padding:11px 26px;border-radius:22px;font-size:13px;font-weight:600;z-index:9999;opacity:0;transition:all .4s;pointer-events:none;white-space:nowrap;box-shadow:0 4px 20px rgba(74,222,128,.25)}
+    .save-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    /* ==========  CV TEMPLATE PICKER  ========== */
+    .tpl-overlay{position:fixed;inset:0;background:rgba(0,0,8,.85);backdrop-filter:blur(12px);z-index:99995;display:none;align-items:center;justify-content:center;padding:20px}
+    .tpl-overlay.open{display:flex}
+    .tpl-modal{background:#0d0d20;border:1px solid rgba(168,85,247,.28);border-radius:22px;padding:36px 32px;max-width:800px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 28px 90px rgba(0,0,0,.8)}
+    .tpl-modal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+    .tpl-modal-hd h2{font-size:20px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .tpl-modal-x{background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer;line-height:1;padding:4px 8px;border-radius:6px;transition:all .2s}
+    .tpl-modal-x:hover{color:#fff;background:rgba(255,255,255,.08)}
+    .tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+    @media(max-width:600px){.tpl-grid{grid-template-columns:1fr 1fr}}
+    .tpl-card{border:2px solid rgba(255,255,255,.07);border-radius:14px;padding:14px;cursor:pointer;transition:all .28s;background:rgba(255,255,255,.02);position:relative}
+    .tpl-card:hover{border-color:rgba(168,85,247,.4);transform:translateY(-4px);background:rgba(168,85,247,.04)}
+    .tpl-card.sel{border-color:var(--accent);background:rgba(168,85,247,.09);box-shadow:0 0 0 1px rgba(168,85,247,.25)}
+    .tpl-preview{width:100%;height:138px;border-radius:8px;overflow:hidden;margin-bottom:11px;position:relative}
+    .tpl-check{position:absolute;top:7px;right:7px;width:22px;height:22px;border-radius:50%;background:var(--accent);display:none;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;z-index:2}
+    .tpl-card.sel .tpl-check{display:flex}
+    .tpl-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px}
+    .tpl-desc{font-size:11px;color:var(--muted);line-height:1.55}
+    .tpl-ft{display:flex;justify-content:flex-end;gap:12px;padding-top:6px}
+    .tpl-cancel{background:transparent;border:1px solid var(--gb);color:var(--muted);padding:11px 22px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .22s}
+    .tpl-cancel:hover{border-color:var(--accent);color:var(--accent)}
+    .tpl-open{background:var(--grad);border:none;color:#fff;padding:11px 28px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .28s;box-shadow:0 4px 18px rgba(168,85,247,.35)}
+    .tpl-open:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(168,85,247,.5)}
+    /* ---- CSS mini-preview art ---- */
+    /* T1: Minimalist Grey */
+    .p1{background:#6b6b6b;width:100%;height:100%;display:flex;flex-direction:column}
+    .p1-hdr{height:34%;background:#4a4a4a;padding:8px 10px;display:flex;flex-direction:column;gap:5px}
+    .p1-n{height:9px;width:50%;background:rgba(255,255,255,.85);border-radius:2px}
+    .p1-r{height:6px;width:33%;background:rgba(255,255,255,.45);border-radius:2px}
+    .p1-body{flex:1;display:grid;grid-template-columns:1fr 1.7fr}
+    .p1-side{background:#6b6b6b;padding:6px;display:flex;flex-direction:column;gap:5px}
+    .p1-sb{height:4px;border-radius:2px;background:rgba(255,255,255,.3)}
+    .p1-main{background:#fff;padding:7px;display:flex;flex-direction:column;gap:5px}
+    .p1-l{height:4px;border-radius:2px;background:#e0e0e0}
+    /* T2: Classic Blue */
+    .p2{background:#fff;width:100%;height:100%;display:flex;flex-direction:column}
+    .p2-hdr{height:30%;background:#1e3a5f;padding:8px 10px;display:flex;flex-direction:column;gap:4px}
+    .p2-n{height:9px;width:50%;background:rgba(255,255,255,.85);border-radius:2px}
+    .p2-r{height:5px;width:34%;background:#93c5fd;border-radius:2px}
+    .p2-crow{display:flex;gap:4px;margin-top:4px}
+    .p2-chip{height:5px;width:20%;background:rgba(255,255,255,.2);border-radius:3px}
+    .p2-body{flex:1;display:grid;grid-template-columns:1fr 1.9fr}
+    .p2-side{background:#f0f4f8;padding:6px;display:flex;flex-direction:column;gap:4px}
+    .p2-sb{height:4px;border-radius:2px;background:#b8cce4}
+    .p2-main{padding:6px;display:flex;flex-direction:column;gap:4px}
+    .p2-l{height:4px;border-radius:2px;background:#dde4ec}
+    .p2-acc{height:4px;width:32%;background:#1e3a5f;border-radius:2px;margin-bottom:2px}
+    /* T3: Modern Minimal */
+    .p3{background:#fff;width:100%;height:100%;padding:10px 12px;display:flex;flex-direction:column;gap:5px}
+    .p3-n{height:10px;width:48%;background:#111;border-radius:2px}
+    .p3-r{height:6px;width:34%;background:#7c3aed;border-radius:2px}
+    .p3-crow{display:flex;gap:5px;margin-top:2px}
+    .p3-chip{height:5px;width:18%;background:#e0d4ff;border-radius:2px}
+    .p3-sep{height:2px;background:#7c3aed;width:100%;margin:3px 0;border-radius:1px}
+    .p3-sec{height:5px;width:30%;background:#4b4b4b;border-radius:2px;border-left:3px solid #7c3aed;padding-left:5px}
+    .p3-l{height:4px;border-radius:2px;background:#ebebeb;margin-bottom:2px}
   </style>
 </head>
 <body>
 
   <!-- Loader -->
-  <div id="ld"><div class="ld-name">Sachin S</div><div class="ld-track"><div class="ld-fill"></div></div></div>
+  <div id="ld"><div class="ld-name">Manasa A</div><div class="ld-track"><div class="ld-fill"></div></div></div>
 
   <!-- Scroll progress -->
   <div id="sp"></div>
@@ -256,7 +336,7 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="nb" id="nb">
     <div class="wrap">
-      <a href="#home" class="nb-brand">S.</a>
+      <a href="#home" class="nb-brand">M.</a>
       <ul class="nb-links" id="nb-links">
         <li><a href="#home" class="ac">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -265,9 +345,76 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button id="edit-btn" class="edit-toggle-btn" title="Edit portfolio content"><i class="fa fa-pencil-alt"></i><span class="edit-label"> Edit</span></button>
       <div class="nb-tog" id="nb-tog"><span></span><span></span><span></span></div>
     </div>
   </nav>
+  <!-- Edit mode banner -->
+  <div class="edit-banner" id="edit-banner"><span class="pulse"></span> Edit Mode &mdash; click any field to edit &nbsp;|&nbsp; Click <strong>Save</strong> when done</div>
+
+  <!-- ===== CV TEMPLATE PICKER MODAL ===== -->
+  <div class="tpl-overlay" id="tpl-overlay">
+    <div class="tpl-modal">
+      <div class="tpl-modal-hd">
+        <h2><i class="fa fa-layer-group" style="font-size:15px;margin-right:9px"></i>Choose a CV Template</h2>
+        <button class="tpl-modal-x" id="tpl-modal-x">&times;</button>
+      </div>
+      <div class="tpl-grid">
+        <!-- T1: Minimalist Dark -->
+        <div class="tpl-card sel" data-tpl="sachin-cv.html">
+          <div class="tpl-preview">
+            <div class="p1">
+              <div class="p1-hdr"><div class="p1-n"></div><div class="p1-r"></div></div>
+              <div class="p1-body">
+                <div class="p1-side"><div class="p1-sb"></div><div class="p1-sb" style="width:75%"></div><div class="p1-sb"></div><div class="p1-sb" style="width:60%"></div><div class="p1-sb" style="width:80%"></div></div>
+                <div class="p1-main"><div class="p1-l" style="width:85%"></div><div class="p1-l" style="width:95%"></div><div class="p1-l" style="width:70%"></div><div class="p1-l" style="width:90%"></div><div class="p1-l" style="width:80%"></div><div class="p1-l" style="width:65%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-check"><i class="fa fa-check"></i></div>
+          <div class="tpl-name">Minimalist Grey</div>
+          <div class="tpl-desc">Grey header &middot; Light grey sidebar &middot; White content</div>
+        </div>
+        <!-- T2: Classic Professional -->
+        <div class="tpl-card" data-tpl="cv-template-2.html">
+          <div class="tpl-preview">
+            <div class="p2">
+              <div class="p2-hdr"><div class="p2-n"></div><div class="p2-r"></div><div class="p2-crow"><div class="p2-chip"></div><div class="p2-chip"></div><div class="p2-chip"></div></div></div>
+              <div class="p2-body">
+                <div class="p2-side"><div class="p2-sb"></div><div class="p2-sb" style="width:80%"></div><div class="p2-sb"></div><div class="p2-sb" style="width:65%"></div><div class="p2-sb" style="width:90%"></div></div>
+                <div class="p2-main"><div class="p2-acc"></div><div class="p2-l" style="width:88%"></div><div class="p2-l" style="width:72%"></div><div class="p2-acc" style="margin-top:6px"></div><div class="p2-l" style="width:90%"></div><div class="p2-l" style="width:75%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-check"><i class="fa fa-check"></i></div>
+          <div class="tpl-name">Classic Professional</div>
+          <div class="tpl-desc">Navy header &middot; Blue accent &middot; Two-column</div>
+        </div>
+        <!-- T3: Modern Minimal -->
+        <div class="tpl-card" data-tpl="cv-template-3.html">
+          <div class="tpl-preview">
+            <div class="p3">
+              <div class="p3-n"></div><div class="p3-r"></div>
+              <div class="p3-crow"><div class="p3-chip"></div><div class="p3-chip"></div><div class="p3-chip"></div></div>
+              <div class="p3-sep"></div>
+              <div class="p3-sec"></div>
+              <div class="p3-l" style="width:90%"></div><div class="p3-l" style="width:75%"></div>
+              <div class="p3-sep"></div>
+              <div class="p3-sec"></div>
+              <div class="p3-l" style="width:80%"></div><div class="p3-l" style="width:90%"></div><div class="p3-l" style="width:65%"></div>
+            </div>
+          </div>
+          <div class="tpl-check"><i class="fa fa-check"></i></div>
+          <div class="tpl-name">Modern Minimal</div>
+          <div class="tpl-desc">Single column &middot; Purple accents &middot; Clean type</div>
+        </div>
+      </div>
+      <div class="tpl-ft">
+        <button class="tpl-cancel" id="tpl-cancel">Cancel</button>
+        <button class="tpl-open" id="tpl-open"><i class="fa fa-external-link-alt"></i> Open &amp; Download</button>
+      </div>
+    </div>
+  </div>
   <ul class="nb-mob" id="nb-mob">
     <button class="nb-close" id="nb-close">&#x2715;</button>
     <li><a href="#home" onclick="closeM()">Home</a></li>
@@ -284,26 +431,25 @@
       <div class="hero-in">
         <div data-aos="fade-right" data-aos-duration="800">
           <div class="hero-badge"><span class="dot"></span> Open to Opportunities</div>
-          <h1 class="hero-name">Hi, I am<br><span class="grad-text">Sachin S</span></h1>
+          <h1 class="hero-name">Hi, I am<br><span class="grad-text">Manasa A</span></h1>
           <p class="hero-role">I'm a <span class="tw" id="tw"></span><span class="cur"></span></p>
-          <p class="hero-desc">MCA student passionate about Web Development, Artificial Intelligence, and Machine Learning — building real-world solutions and solving complex problems.</p>
+          <p class="hero-desc">Backend Developer with 3+ years of experience designing and building scalable backend systems using Golang and Java. Experienced in microservices, REST &amp; gRPC APIs, Kafka, and PostgreSQL.</p>
           <div class="hero-cta">
-            <a href="sachin-cv.html" target="_blank" class="btn-g"><i class="fa fa-download"></i> Download CV</a>
+            <button onclick="openTplModal()" class="btn-g"><i class="fa fa-download"></i> Download CV</button>
             <a href="#contact" class="btn-o"><i class="fa fa-envelope"></i> Hire Me</a>
           </div>
           <div class="hero-soc">
             <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:sachin9113031388@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+            <a href="mailto:sri15manasa@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
           </div>
         </div>
         <div class="hero-photo-area" data-aos="fade-left" data-aos-duration="800">
           <div class="photo-ring">
-            <img src="images/profile2.jpeg" alt="Sachin S" class="hero-img"/>
+            <img src="image.jpg" alt="Manasa A" class="hero-img"/>
           </div>
-          <div class="fb fb-tr"><i class="fab fa-python" style="color:#38bdf8;font-size:18px"></i> Python Dev</div>
-          <div class="fb fb-bl"><i class="fa fa-robot" style="color:#a855f7;font-size:18px"></i> AI &amp; ML</div>
+          <div class="fb fb-tr"><i class="fab fa-golang" style="color:#38bdf8;font-size:18px"></i> Go Developer</div>
+          <div class="fb fb-bl"><i class="fa fa-server" style="color:#a855f7;font-size:18px"></i> Backend Dev</div>
         </div>
       </div>
     </div>
@@ -317,28 +463,28 @@
         <div data-aos="fade-right">
           <div class="about-img-wrap">
             <div class="about-border"></div>
-            <img src="images/profile.jpeg" alt="Sachin S"/>
-            <div class="exp-badge"><span class="en">2+</span><span>Projects Done</span></div>
+            <img src="image.jpg" alt="Manasa A"/>
+            <div class="exp-badge"><span class="en">3+</span><span>Years Experience</span></div>
           </div>
         </div>
         <div data-aos="fade-left" data-aos-delay="100">
           <div class="sec-label">Who I Am</div>
           <h2 class="sec-title">About <span class="grad-text">Me</span></h2>
           <div class="sec-div"></div>
-          <p>I am an MCA student with a strong passion for Web Development, Artificial Intelligence, and Machine Learning. I enjoy building real-world projects and continuously sharpening my technical skills. I believe in clean code, great UX, and using technology to solve real problems.</p>
+          <p>Backend Developer with 3+ years of experience in designing and building scalable backend systems using Golang and Java. Experienced in developing microservices, REST and gRPC APIs, and implementing event-driven architectures using Kafka. Strong expertise in PostgreSQL query optimization and secure API development with JWT authentication.</p>
           <ul class="info-list">
-            <li><span class="k">Name</span><span class="v">Sachin S</span></li>
-            <li><span class="k">Degree</span><span class="v">MCA (Pursuing)</span></li>
-            <li><span class="k">Phone</span><span class="v">+91 9113031388</span></li>
-            <li><span class="k">Email</span><span class="v">sachin9113031388@gmail.com</span></li>
-            <li><span class="k">Country</span><span class="v">India</span></li>
-            <li><span class="k">Status</span><span class="v">Available</span></li>
+            <li><span class="k">Name</span><span class="v">Manasa A</span></li>
+            <li><span class="k">Role</span><span class="v">API Developer (Golang)</span></li>
+            <li><span class="k">Phone</span><span class="v">+91 9741847894</span></li>
+            <li><span class="k">Email</span><span class="v">sri15manasa@gmail.com</span></li>
+            <li><span class="k">Location</span><span class="v">Bangalore</span></li>
+            <li><span class="k">Working Experience</span><span class="v">3.1 Years Experience</span></li>
           </ul>
-          <a href="sachin-cv.html" target="_blank" class="btn-g" style="display:inline-flex"><i class="fa fa-download"></i> Download CV</a>
+          <button onclick="openTplModal()" class="btn-g" style="display:inline-flex;border:none;cursor:pointer"><i class="fa fa-download"></i> Download CV</button>
           <div class="stats-row">
-            <div class="stat" data-aos="zoom-in" data-aos-delay="100"><div class="sn" data-count="2">0</div><div class="sl">Projects</div></div>
-            <div class="stat" data-aos="zoom-in" data-aos-delay="200"><div class="sn" data-count="7">0</div><div class="sl">Skills</div></div>
-            <div class="stat" data-aos="zoom-in" data-aos-delay="300"><div class="sn" data-count="3">0</div><div class="sl">Degrees</div></div>
+            <div class="stat" data-aos="zoom-in" data-aos-delay="100"><div class="sn" data-count="3">0</div><div class="sl">Years Exp</div></div>
+            <div class="stat" data-aos="zoom-in" data-aos-delay="200"><div class="sn" data-count="2">0</div><div class="sl">Projects</div></div>
+            <div class="stat" data-aos="zoom-in" data-aos-delay="300"><div class="sn" data-count="10">0</div><div class="sl">Technologies</div></div>
           </div>
         </div>
       </div>
@@ -352,23 +498,23 @@
         <div class="sec-label" style="justify-content:center">What I Know</div>
         <h2 class="sec-title">My <span class="grad-text">Skills</span></h2>
         <div class="sec-div" style="margin:0 auto 14px"></div>
-        <p style="max-width:500px;margin:0 auto">Technologies and tools I work with to build impactful projects.</p>
+        <p style="max-width:500px;margin:0 auto">Technologies and tools I work with to build scalable backend systems.</p>
       </div>
       <div class="skills-g" data-aos="fade-up" data-aos-delay="100">
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">🌐 HTML &amp; CSS</div><div class="sk-pct">90%</div></div><div class="sk-track"><div class="sk-fill" data-w="90"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">⚡ JavaScript</div><div class="sk-pct">78%</div></div><div class="sk-track"><div class="sk-fill" data-w="78"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">🐍 Python</div><div class="sk-pct">82%</div></div><div class="sk-track"><div class="sk-fill" data-w="82"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">🤖 Machine Learning</div><div class="sk-pct">75%</div></div><div class="sk-track"><div class="sk-fill" data-w="75"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">🧠 Artificial Intelligence</div><div class="sk-pct">72%</div></div><div class="sk-track"><div class="sk-fill" data-w="72"></div></div></div>
-        <div class="sk-card"><div class="sk-top"><div class="sk-name">💻 Web Development</div><div class="sk-pct">85%</div></div><div class="sk-track"><div class="sk-fill" data-w="85"></div></div></div>
+        <div class="sk-card"><div class="sk-top"><div class="sk-name">🐹 Go (Golang)</div><div class="sk-pct">90%</div></div><div class="sk-track"><div class="sk-fill" data-w="90"></div></div></div>
+        <div class="sk-card"><div class="sk-top"><div class="sk-name">☕ Java</div><div class="sk-pct">85%</div></div><div class="sk-track"><div class="sk-fill" data-w="85"></div></div></div>
+        <div class="sk-card"><div class="sk-top"><div class="sk-name">🔗 REST &amp; gRPC APIs</div><div class="sk-pct">88%</div></div><div class="sk-track"><div class="sk-fill" data-w="88"></div></div></div>
+        <div class="sk-card"><div class="sk-top"><div class="sk-name">🗄️ PostgreSQL / MySQL</div><div class="sk-pct">85%</div></div><div class="sk-track"><div class="sk-fill" data-w="85"></div></div></div>
+        <div class="sk-card"><div class="sk-top"><div class="sk-name">📨 Kafka</div><div class="sk-pct">80%</div></div><div class="sk-track"><div class="sk-fill" data-w="80"></div></div></div>
+        <div class="sk-card"><div class="sk-top"><div class="sk-name">🔐 JWT Security</div><div class="sk-pct">82%</div></div><div class="sk-track"><div class="sk-fill" data-w="82"></div></div></div>
       </div>
       <div class="tags-area" data-aos="fade-up" data-aos-delay="150">
         <h3>Also familiar with</h3>
         <div class="tags-wrap">
-          <span class="tag">scikit-learn</span><span class="tag">NumPy</span><span class="tag">Pandas</span>
-          <span class="tag">Bootstrap</span><span class="tag">Git &amp; GitHub</span>
-          <span class="tag">Computer Vision</span><span class="tag">Data Analysis</span>
-          <span class="tag">Problem Solving</span><span class="tag">Competitive Exams</span>
+          <span class="tag">Gin Framework</span><span class="tag">Spring Boot</span><span class="tag">MinIO</span>
+          <span class="tag">Temporal (Go SDK)</span><span class="tag">Git &amp; GitHub</span>
+          <span class="tag">Jenkins</span><span class="tag">Docker*</span>
+          <span class="tag">Kubernetes*</span><span class="tag">Microservices</span>
         </div>
       </div>
     </div>
@@ -383,35 +529,36 @@
         <div class="sec-div" style="margin:0 auto 14px"></div>
         <p style="max-width:480px;margin:0 auto">Academic milestones that shaped my technical foundation.</p>
       </div>
-      <div class="tl" data-aos="fade-up" data-aos-delay="100">
+      <div class="tl" id="experience-tl" data-aos="fade-up" data-aos-delay="100">
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div class="tl-card">
-            <div class="tl-year">🎓 Pursuing</div>
-            <div class="tl-title">Master of Computer Applications (MCA)</div>
-            <div class="tl-sub">Postgraduation — India</div>
-            <div class="tl-desc">Advanced computing, software engineering, AI, machine learning and modern web technologies. Building a strong foundation for a career in AI/ML and software development.</div>
+            <div class="tl-year">🎓 2015 – 2019</div>
+            <div class="tl-title">Bachelor of Engineering</div>
+            <div class="tl-sub">Visvesvaraya Technological University</div>
+            <div class="tl-desc">Built a strong foundation in engineering, computer science, algorithms, and software development principles.</div>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div class="tl-card">
-            <div class="tl-year">📘 Completed</div>
-            <div class="tl-title">Bachelor's Degree</div>
-            <div class="tl-sub">Mathematics &amp; Computer Science — India</div>
-            <div class="tl-desc">Built a strong mathematical and computational foundation covering algorithms, data structures, discrete mathematics, and programming paradigms.</div>
+            <div class="tl-year">💼 Mar 2023 – Apr 2024</div>
+            <div class="tl-title">Backend Developer</div>
+            <div class="tl-sub">Increasingly Technologies / Dynamic Selling Pvt Ltd</div>
+            <div class="tl-desc">Developed and maintained backend applications using Java and Spring Boot. Built RESTful services, optimized MySQL schemas, and utilized Hibernate/JPA for ORM-based data persistence.</div>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div class="tl-card">
-            <div class="tl-year">📗 Completed</div>
-            <div class="tl-title">PUC — PCMB</div>
-            <div class="tl-sub">Physics · Chemistry · Mathematics · Biology — India</div>
-            <div class="tl-desc">Completed pre-university education with a comprehensive science stream, developing strong analytical thinking and problem-solving skills.</div>
+            <div class="tl-year">🚀 May 2024 – Present</div>
+            <div class="tl-title">API Developer (Golang)</div>
+            <div class="tl-sub">Aurionpro Solutions Ltd</div>
+            <div class="tl-desc">Developing Golang-based microservices using REST APIs. Implementing Kafka event publishing, MinIO storage integration, JWT authentication, and Temporal workflows. Observability via structured logging and metrics.</div>
           </div>
         </div>
       </div>
+      <button id="add-exp-btn" class="add-exp-btn"><i class="fa fa-plus"></i> Add Experience / Education</button>
     </div>
   </section>
 
@@ -422,34 +569,24 @@
         <div class="sec-label" style="justify-content:center">What I've Built</div>
         <h2 class="sec-title">My <span class="grad-text">Projects</span></h2>
         <div class="sec-div" style="margin:0 auto 14px"></div>
-        <p style="max-width:480px;margin:0 auto">Real-world projects built with passion and purpose.</p>
+        <p style="max-width:480px;margin:0 auto">Real-world backend projects built with performance and scalability in mind.</p>
       </div>
       <div class="proj-g">
         <div class="proj-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="proj-ico">🕵️</div>
-          <div class="proj-title">Fake Profile Detection</div>
-          <div class="proj-desc">A machine learning system to detect fake and bot social media profiles by analysing profile attributes, activity patterns, and metadata using supervised classification algorithms.</div>
-          <div class="proj-tags"><span class="ptag tp">Python</span><span class="ptag tc">Machine Learning</span><span class="ptag tp">scikit-learn</span><span class="ptag tk">Classification</span></div>
+          <div class="proj-ico">🏛️</div>
+          <div class="proj-title">Transfer Management System</div>
+          <div class="proj-desc">Backend platform for government internal transfer processing. Built scalable REST APIs with Go and Gin, with optimized PostgreSQL schemas for high-volume transaction handling.</div>
+          <div class="proj-tags"><span class="ptag tp">Go</span><span class="ptag tc">PostgreSQL</span><span class="ptag tp">Gin</span><span class="ptag tk">REST API</span></div>
           <div class="proj-foot">
             <a href="#" class="proj-link">View Project <i class="fa fa-arrow-right"></i></a>
             <a href="#" style="color:var(--muted);font-size:18px"><i class="fab fa-github"></i></a>
           </div>
         </div>
         <div class="proj-card c2" data-aos="fade-up" data-aos-delay="80">
-          <div class="proj-ico">👁️</div>
-          <div class="proj-title">Object Detection using ML</div>
-          <div class="proj-desc">A computer vision project leveraging ML models to identify and classify multiple objects in real-time from images and video streams with bounding boxes and confidence scores.</div>
-          <div class="proj-tags"><span class="ptag tc">Python</span><span class="ptag tp">Computer Vision</span><span class="ptag tc">ML</span><span class="ptag tk">Real-time</span></div>
-          <div class="proj-foot">
-            <a href="#" class="proj-link">View Project <i class="fa fa-arrow-right"></i></a>
-            <a href="#" style="color:var(--muted);font-size:18px"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="proj-card c3" data-aos="fade-up" data-aos-delay="160">
-          <div class="proj-ico">🌐</div>
-          <div class="proj-title">Personal Portfolio</div>
-          <div class="proj-desc">A fully responsive and modern personal portfolio website with advanced CSS animations, galaxy particle effects, glassmorphism UI, skill progress bars, and interactive elements.</div>
-          <div class="proj-tags"><span class="ptag tk">HTML</span><span class="ptag tp">CSS</span><span class="ptag tc">JavaScript</span><span class="ptag tk">Responsive</span></div>
+          <div class="proj-ico">🛒</div>
+          <div class="proj-title">CartSynergy – Product Bundling</div>
+          <div class="proj-desc">Backend system for product bundle creation and pricing optimization. Developed using Java and Spring Boot with MySQL for efficient data management and REST API integration.</div>
+          <div class="proj-tags"><span class="ptag tc">Java</span><span class="ptag tp">Spring Boot</span><span class="ptag tc">MySQL</span><span class="ptag tk">REST API</span></div>
           <div class="proj-foot">
             <a href="#" class="proj-link">View Project <i class="fa fa-arrow-right"></i></a>
             <a href="#" style="color:var(--muted);font-size:18px"><i class="fab fa-github"></i></a>
@@ -470,13 +607,13 @@
       </div>
       <div class="contact-g">
         <div class="cc-col" data-aos="fade-right">
-          <div class="cc"><div class="cc-ico"><i class="fa fa-phone"></i></div><div><div class="cc-lbl">Phone</div><div class="cc-val">+91 9113031388</div></div></div>
-          <div class="cc"><div class="cc-ico"><i class="fa fa-envelope"></i></div><div><div class="cc-lbl">Email</div><div class="cc-val">sachin9113031388@gmail.com</div></div></div>
-          <div class="cc"><div class="cc-ico"><i class="fa fa-map-marker-alt"></i></div><div><div class="cc-lbl">Location</div><div class="cc-val">India</div></div></div>
-          <div class="cc"><div class="cc-ico"><i class="fa fa-graduation-cap"></i></div><div><div class="cc-lbl">Degree</div><div class="cc-val">MCA (Pursuing)</div></div></div>
+          <div class="cc"><div class="cc-ico"><i class="fa fa-phone"></i></div><div><div class="cc-lbl">Phone</div><div class="cc-val" data-sync="contact-phone">+91 9741847894 / 9380153607</div></div></div>
+          <div class="cc"><div class="cc-ico"><i class="fa fa-envelope"></i></div><div><div class="cc-lbl">Email</div><div class="cc-val" data-sync="contact-email">sri15manasa@gmail.com</div></div></div>
+          <div class="cc"><div class="cc-ico"><i class="fa fa-map-marker-alt"></i></div><div><div class="cc-lbl">Location</div><div class="cc-val" data-sync="contact-location">Bangalore</div></div></div>
+          <div class="cc"><div class="cc-ico"><i class="fa fa-briefcase"></i></div><div><div class="cc-lbl">Role</div><div class="cc-val" data-sync="contact-role">API Developer (Golang)</div></div></div>
         </div>
         <div class="cf" data-aos="fade-left">
-          <form action="https://formsubmit.co/sachin9113031388@gmail.com" method="POST">
+          <form action="https://formsubmit.co/sri15manasa@gmail.com" method="POST">
             <div class="f-row">
               <div class="fg"><label>Your Name</label><input type="text" name="name" class="fi" placeholder="Sachin S" required/></div>
               <div class="fg"><label>Email</label><input type="email" name="email" class="fi" placeholder="you@email.com" required/></div>
@@ -497,13 +634,12 @@
     <div class="wrap">
       <div class="ft">
         <div>
-          <div class="fb-name">Sachin S</div>
-          <p class="fb-tag">MCA Student &bull; Web Developer &bull; AI &amp; ML Enthusiast.<br/>Building impactful digital solutions.</p>
+          <div class="fb-name">Manasa A</div>
+          <p class="fb-tag">API Developer (Golang) &bull; Backend Engineer &bull; Microservices Expert.<br/>Building scalable, secure backend systems.</p>
           <div class="fb-soc">
             <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:sachin9113031388@gmail.com"><i class="fa fa-envelope"></i></a>
+            <a href="mailto:sri15manasa@gmail.com"><i class="fa fa-envelope"></i></a>
           </div>
         </div>
         <div class="fc">
@@ -520,12 +656,12 @@
         <div class="fc">
           <h4>Contact</h4>
           <ul class="fl" style="gap:14px">
-            <li><a href="tel:+919113031388" style="flex-direction:column;gap:2px"><span style="color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:1px">Phone</span><span>+91 9113031388</span></a></li>
-            <li><a href="mailto:sachin9113031388@gmail.com" style="flex-direction:column;gap:2px"><span style="color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:1px">Email</span><span>sachin9113031388@gmail.com</span></a></li>
+            <li><a href="tel:+919741847894" style="flex-direction:column;gap:2px"><span style="color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:1px">Phone</span><span>+91 9741847894</span></a></li>
+            <li><a href="mailto:sri15manasa@gmail.com" style="flex-direction:column;gap:2px"><span style="color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:1px">Email</span><span>sri15manasa@gmail.com</span></a></li>
           </ul>
         </div>
       </div>
-      <div class="fb-bot">&copy; <span id="yr"></span> <span>Sachin S</span>. Crafted with <span style="color:#f472b6">&#9829;</span> in India.</div>
+      <div class="fb-bot">&copy; <span id="yr"></span> <span>Manasa A</span>. Crafted with <span style="color:#f472b6">&#9829;</span> in Bangalore.</div>
     </div>
   </footer>
 
@@ -577,7 +713,7 @@
     function closeM() { document.getElementById('nb-mob').classList.remove('open'); }
 
     // Typed text
-    const words = ['MCA Student.','Web Developer.','Python Programmer.','AI Enthusiast.','ML Enthusiast.','Problem Solver.'];
+    const words = ['API Developer.','Go Developer.','Backend Engineer.','Microservices Expert.','Problem Solver.'];
     let wi=0,ci=0,del=false;
     const tEl = document.getElementById('tw');
     (function type(){
@@ -611,6 +747,172 @@
         });
       }, { threshold: 0.5 }).observe(row);
     });
+
+    // ===== INLINE EDIT MODE =====
+    (function(){
+      const SELS = [
+        '.hero-name .grad-text', '.hero-desc',
+        '#about .about-g p',
+        '.info-list .k', '.info-list .v',
+        '.exp-badge span', '.stat .sl',
+        '.sk-name', '.sk-pct',
+        '.tags-area .tag',
+        '.tl-year', '.tl-title', '.tl-sub', '.tl-desc',
+        '.proj-title', '.proj-desc', '.ptag',
+        '.cc-lbl', '.cc-val',
+        '.fb-name', '.fb-tag'
+      ];
+
+      const editBtn    = document.getElementById('edit-btn');
+      const editBanner = document.getElementById('edit-banner');
+      let editing = false;
+
+      // Create save toast element
+      const toast = document.createElement('div');
+      toast.className = 'save-toast';
+      document.body.appendChild(toast);
+      function showToast(msg){
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2800);
+      }
+
+      function getFields(){
+        const list = [];
+        SELS.forEach(s => document.querySelectorAll(s).forEach(el => list.push(el)));
+        return list;
+      }
+
+      function syncBar(pctEl){
+        const card = pctEl.closest('.sk-card');
+        if(!card) return;
+        const fill = card.querySelector('.sk-fill');
+        if(!fill) return;
+        const v = Math.min(100, Math.max(0, parseInt(pctEl.textContent) || 0));
+        fill.style.width = v + '%';
+        fill.dataset.w   = v;
+      }
+
+      function onPctInput(){ syncBar(this); }
+
+      // Safely escape text for innerHTML
+      function esc(s){ const d = document.createElement('div'); d.textContent = String(s||''); return d.innerHTML; }
+
+      // Collect all data and persist to localStorage
+      function saveToStorage(){
+        const get = sel => document.querySelector(sel)?.textContent?.trim() || '';
+        const data = {
+          name:     get('.hero-name .grad-text'),
+          role:     get('.cc-val[data-sync="contact-role"]'),
+          phone:    get('.cc-val[data-sync="contact-phone"]'),
+          email:    get('.cc-val[data-sync="contact-email"]'),
+          location: get('.cc-val[data-sync="contact-location"]'),
+          summary:  get('#about .about-g p'),
+          skills: Array.from(document.querySelectorAll('.sk-card')).map(c => ({
+            name: c.querySelector('.sk-name')?.textContent?.trim() || '',
+            pct:  parseInt(c.querySelector('.sk-pct')?.textContent) || 0
+          })),
+          tags: Array.from(document.querySelectorAll('.tags-area .tag')).map(t => t.textContent.trim()),
+          experience: Array.from(document.querySelectorAll('#experience-tl .tl-item')).map(item => ({
+            year:    item.querySelector('.tl-year')?.textContent?.trim() || '',
+            title:   item.querySelector('.tl-title')?.textContent?.trim() || '',
+            company: item.querySelector('.tl-sub')?.textContent?.trim() || '',
+            desc:    item.querySelector('.tl-desc')?.textContent?.trim() || ''
+          })),
+          projects: Array.from(document.querySelectorAll('.proj-card')).map(c => ({
+            title: c.querySelector('.proj-title')?.textContent?.trim() || '',
+            desc:  c.querySelector('.proj-desc')?.textContent?.trim() || '',
+            tags:  Array.from(c.querySelectorAll('.ptag')).map(t => t.textContent.trim())
+          }))
+        };
+        localStorage.setItem('portfolio_data', JSON.stringify(data));
+      }
+
+      function enterEdit(){
+        editing = true;
+        document.body.classList.add('edit-mode');
+        editBtn.innerHTML = '<i class="fa fa-save"></i><span class="edit-label"> Save</span>';
+        editBtn.classList.add('is-save');
+        editBanner.classList.add('show');
+        getFields().forEach(el => { el.contentEditable = 'true'; el.spellcheck = false; });
+        document.querySelectorAll('.sk-pct').forEach(el => el.addEventListener('input', onPctInput));
+      }
+
+      function exitEdit(){
+        editing = false;
+        document.body.classList.remove('edit-mode');
+        editBtn.innerHTML = '<i class="fa fa-pencil-alt"></i><span class="edit-label"> Edit</span>';
+        editBtn.classList.remove('is-save');
+        editBanner.classList.remove('show');
+        getFields().forEach(el => { el.contentEditable = 'false'; });
+        // Also disable contenteditable on dynamically added items
+        document.querySelectorAll('#experience-tl [contenteditable]').forEach(el => { el.contentEditable = 'false'; });
+        document.querySelectorAll('.sk-pct').forEach(el => {
+          el.removeEventListener('input', onPctInput);
+          syncBar(el);
+        });
+        document.querySelectorAll('.stat .sn').forEach(el => {
+          const n = parseInt(el.textContent) || 0;
+          el.dataset.count = n;
+        });
+        saveToStorage();
+        showToast('✓ Saved! Open CV to see your updates.');
+      }
+
+      // Add More Experience button
+      const addBtn = document.getElementById('add-exp-btn');
+      if(addBtn){
+        addBtn.addEventListener('click', () => {
+          const tl = document.getElementById('experience-tl');
+          const item = document.createElement('div');
+          item.className = 'tl-item';
+          item.innerHTML =
+            '<div class="tl-dot"></div>' +
+            '<div class="tl-card">' +
+            '<div class="tl-year" contenteditable="true" spellcheck="false">\uD83D\uDCC5 Year Range</div>' +
+            '<div class="tl-title" contenteditable="true" spellcheck="false">Job Title / Degree</div>' +
+            '<div class="tl-sub" contenteditable="true" spellcheck="false">Company / Institution</div>' +
+            '<div class="tl-desc" contenteditable="true" spellcheck="false">Describe your role and responsibilities here...</div>' +
+            '<button class="del-exp-btn"><i class="fa fa-times"></i> Remove</button>' +
+            '</div>';
+          item.querySelector('.del-exp-btn').addEventListener('click', () => item.remove());
+          tl.appendChild(item);
+          item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => item.querySelector('.tl-year').focus(), 300);
+        });
+      }
+
+      editBtn.addEventListener('click', () => editing ? exitEdit() : enterEdit());
+    })();
+
+    // ===== CV TEMPLATE PICKER =====
+    var _selTpl = 'sachin-cv.html';
+    function openTplModal(){
+      document.getElementById('tpl-overlay').classList.add('open');
+    }
+    (function(){
+      var overlay = document.getElementById('tpl-overlay');
+      var cards   = document.querySelectorAll('.tpl-card');
+      var openBtn = document.getElementById('tpl-open');
+
+      cards.forEach(function(c){
+        c.addEventListener('click', function(){
+          cards.forEach(function(x){ x.classList.remove('sel'); });
+          c.classList.add('sel');
+          _selTpl = c.dataset.tpl;
+        });
+      });
+
+      function close(){ overlay.classList.remove('open'); }
+      document.getElementById('tpl-modal-x').addEventListener('click', close);
+      document.getElementById('tpl-cancel').addEventListener('click', close);
+      overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+
+      openBtn.addEventListener('click', function(){
+        window.open(_selTpl, '_blank');
+        close();
+      });
+    })();
   </script>
 </body>
 </html>
